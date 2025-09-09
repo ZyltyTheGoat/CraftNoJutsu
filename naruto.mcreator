@@ -1,0 +1,585 @@
+{
+  "mod_elements": [
+    {
+      "name": "ApplyRankScaling",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "apply_rank_scaling",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ApplyRankScalingProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CraftNoJutsu",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_no_jutsu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/command/CraftNoJutsuCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "CommandSetRankGenin",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_set_rank_genin",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandSetRankGeninProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Set Rank"
+    },
+    {
+      "name": "CommandSetRankChunin",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_set_rank_chunin",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandSetRankChuninProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Set Rank"
+    },
+    {
+      "name": "CommandSetRankJonin",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_set_rank_jonin",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandSetRankJoninProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Set Rank"
+    },
+    {
+      "name": "CommandSetRankKage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_set_rank_kage",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandSetRankKageProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Set Rank"
+    },
+    {
+      "name": "CommandSetRankLegend",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_set_rank_legend",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandSetRankLegendProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Set Rank"
+    },
+    {
+      "name": "Dummy",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dummy",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/dummy_spawn_egg.json",
+          "src/main/java/net/mcreator/naruto/client/renderer/DummyRenderer.java",
+          "src/main/java/net/mcreator/naruto/entity/DummyEntity.java"
+        ]
+      },
+      "path": "~/Dummy"
+    },
+    {
+      "name": "DummyHit",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dummy_hit",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/DummyHitProcedure.java"
+        ]
+      },
+      "path": "~/Dummy"
+    },
+    {
+      "name": "DisableNormalHostilesSpawning",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "disable_normal_hostiles_spawning",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/DisableNormalHostilesSpawningProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ChakraRegen",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chakra_regen",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ChakraRegenProcedure.java"
+        ]
+      },
+      "path": "~/Chakra System"
+    },
+    {
+      "name": "DisplayChakra",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_chakra",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/screens/DisplayChakraOverlay.java"
+        ]
+      },
+      "path": "~/Chakra System"
+    },
+    {
+      "name": "ReturnCurrentChakra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_current_chakra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ReturnCurrentChakraProcedure.java"
+        ]
+      },
+      "path": "~/Chakra System"
+    },
+    {
+      "name": "CommandChakraRefill",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_chakra_refill",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandChakraRefillProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Chakra"
+    },
+    {
+      "name": "JutsuData",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "jutsu_data",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/JutsuData.java"
+        ]
+      },
+      "path": "~/Jutsu System"
+    },
+    {
+      "name": "JutsuRegistry",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "jutsu_registry",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/JutsuRegistry.java"
+        ]
+      },
+      "path": "~/Jutsu System"
+    },
+    {
+      "name": "JutsuMenuGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_menu_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/world/inventory/JutsuMenuGUIMenu.java",
+          "src/main/java/net/mcreator/naruto/client/gui/JutsuMenuGUIScreen.java",
+          "src/main/java/net/mcreator/naruto/network/JutsuMenuGUIButtonMessage.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "JutsuMenuOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_menu_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/JutsuMenuOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "JutsuMenu",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/network/JutsuMenuMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "GUIJutsuMenuButtonFireReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_fire_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonFireReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    },
+    {
+      "name": "GUIJutsuMenuButtonWaterReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_water_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonWaterReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    },
+    {
+      "name": "GUIJutsuMenuButtonEarthReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_earth_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonEarthReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    },
+    {
+      "name": "GUIJutsuMenuButtonWindReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_wind_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonWindReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    },
+    {
+      "name": "GUIJutsuMenuButtonLightningReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_lightning_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonLightningReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    },
+    {
+      "name": "GUIJutsuMenuButtonKekkeiGenkaiReleaseSelect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_jutsu_menu_button_kekkei_genkai_release_select",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonKekkeiGenkaiReleaseSelectProcedure.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI/Button Procedures"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "rank",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "currentChakra",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "maxChakra",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "jutsuMenuSelectedRelease",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "fire"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.naruto.dummy_spawn_egg": "Dummy Spawn Egg",
+      "entity.naruto.dummy": "Dummy",
+      "gui.naruto.display_chakra.label_empty": "",
+      "key.naruto.jutsu_menu": "Jutsu Menu"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/naruto/network/NarutoModVariables.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/net/mcreator/naruto/init/NarutoModTabs.java",
+      "src/main/java/net/mcreator/naruto/NarutoMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/naruto/init/NarutoModScreens.java",
+      "src/main/java/net/mcreator/naruto/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModMenus.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModKeyMappings.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModItems.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModEntityRenderers.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModEntities.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Commands",
+        "children": [
+          {
+            "name": "Set Rank",
+            "children": []
+          },
+          {
+            "name": "Chakra",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Chakra System",
+        "children": []
+      },
+      {
+        "name": "Dummy",
+        "children": []
+      },
+      {
+        "name": "Jutsu System",
+        "children": [
+          {
+            "name": "GUI",
+            "children": [
+              {
+                "name": "Button Procedures",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Keybinds",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "naruto",
+    "modName": "Craft No Jutsu",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "modElementsPackage": "net.mcreator.naruto"
+  },
+  "mcreatorVersion": 202500228610
+}

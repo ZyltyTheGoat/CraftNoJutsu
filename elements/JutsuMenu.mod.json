@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "M",
+    "keyBindingName": "Jutsu Menu",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "JutsuMenuOnKeyPressed"
+    }
+  }
+}
