@@ -4,6 +4,8 @@ import org.joml.Matrix4f;
 
 import org.checkerframework.checker.units.qual.g;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,6 +17,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.network.SetActiveJutsuPacket;
 import net.mcreator.naruto.network.NarutoModVariables;
 import net.mcreator.naruto.init.NarutoModScreens;
 import net.mcreator.naruto.init.NarutoModKeyMappings;
@@ -39,7 +42,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.jcraft.jogg.Page;
 
 public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleasesMenu> implements NarutoModScreens.ScreenAccessor {
-	private static final int RADIUS_IN = 60;
+	private static final int RADIUS_IN = 40;
 	private static final int RADIUS_OUT = 160;
 	private static final int RADIUS_COLOR_OUT = 165; // Outer radius for color ring (extends from RADIUS_OUT)
 	private static final int BASE_CIRCLE_COLOR = 0x96000000;
@@ -225,8 +228,10 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private void renderColorRing(GuiGraphics guiGraphics, int centerX, int centerY) {
 		List<String> jutsuNames = getCurrentJutsuNames();
 		List<String> jutsuIds = getCurrentJutsuIds();
-		if (jutsuNames.isEmpty())
+		// Add safety check - both lists must have the same size and not be empty
+		if (jutsuNames.isEmpty() || jutsuIds.isEmpty() || jutsuNames.size() != jutsuIds.size()) {
 			return;
+		}
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShader(GameRenderer::getPositionColorShader);
@@ -234,13 +239,11 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		guiGraphics.pose().pushPose();
 		Tesselator tesselator = Tesselator.getInstance();
 		BufferBuilder buffer = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-
 		for (int i = 0; i < jutsuNames.size(); i++) {
 			// Get the jutsu color from JutsuData
 			String jutsuId = jutsuIds.get(i);
 			JutsuData jutsuData = JutsuRegistry.getJutsu(jutsuId);
 			int color = jutsuData != null ? jutsuData.getColor() : 0x96FFFFFF; // Default to white if not found
-
 			if (jutsuNames.size() > 1) {
 				// Use same gap angles as outer radius to create seamless continuation
 				float gapAngleOut = GAP_WIDTH_PIXELS / RADIUS_OUT;
@@ -439,11 +442,19 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	public boolean mouseClicked(double mouseX, double mouseY, int button) {
 		List<String> jutsuIds = getCurrentJutsuIds();
 		List<String> jutsuNames = getCurrentJutsuNames();
-		if (this.hovered >= 0 && this.hovered < jutsuNames.size()) {
+		// Add safety checks to prevent IndexOutOfBoundsException
+		if (jutsuIds.isEmpty() || jutsuNames.isEmpty()) {
+			return super.mouseClicked(mouseX, mouseY, button);
+		}
+		// Ensure hovered index is valid for both lists
+		if (this.hovered >= 0 && this.hovered < jutsuNames.size() && this.hovered < jutsuIds.size()) {
 			if (this.minecraft != null && this.minecraft.player != null) {
 				String selectedJutsuId = jutsuIds.get(this.hovered);
 				String selectedJutsuName = jutsuNames.get(this.hovered);
-				// TODO: Handle jutsu selection with ID: selectedJutsuId
+				// Send packet to server to set active jutsu (NeoForge way)
+				PacketDistributor.sendToServer(new SetActiveJutsuPacket(selectedJutsuId));
+				// Optional: Show confirmation message
+				this.minecraft.player.displayClientMessage(Component.literal("Selected: " + selectedJutsuName), true);
 				this.minecraft.player.closeContainer();
 			}
 			return true;

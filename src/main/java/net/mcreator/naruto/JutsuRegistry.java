@@ -38,21 +38,21 @@ public class JutsuRegistry {
 		registerJutsu("fireball", new JutsuData("Great Fireball", "NATURE", "FIRE", 30, 60, 100, false, 0x96e03636));
 		registerJutsu("phoenix_flower", new JutsuData("Phoenix Flower", "NATURE", "FIRE", 25, 40, 80, false, 0x96e03636));
 		registerJutsu("hiding_in_ash", new JutsuData("Hiding in Ash", "NATURE", "FIRE", 25, 0, 100, true, 0x96e03636));
-		registerJutsu("fire_dragon_flame_bullet", new JutsuData("Fire Dragon Bullet", "NATURE", "FIRE", 45, 80, 120, false, 0x96e03636));
-		registerJutsu("ash_pile_burning", new JutsuData("Ash Pile Burning", "NATURE", "FIRE", 35, 50, 100, false, 0x96e03636));
-		registerJutsu("bomb_blast_dance", new JutsuData("Bomb Blast Dance", "NATURE", "FIRE", 60, 100, 160, false, 0x96e03636));
+		registerJutsu("fire_dragon_bullet", new JutsuData("Fire Dragon Bullet", "NATURE", "FIRE", 45, 80, 120, false, 0x96e03636));
+		registerJutsu("great_flame", new JutsuData("Great Flame", "NATURE", "FIRE", 60, 100, 160, false, 0x96e03636));
 		registerJutsu("great_fire_annihilation", new JutsuData("Great Fire Annihilation", "NATURE", "FIRE", 60, 100, 160, false, 0x96e03636));
 		// Water Release
 		registerJutsu("water_bullet", new JutsuData("Water Bullet", "NATURE", "WATER", 20, 30, 60, false, 0x96367de0));
-		registerJutsu("water_dragon", new JutsuData("Water Dragon Bullet", "NATURE", "WATER", 50, 90, 140, false, 0x96367de0));
-		registerJutsu("water_wall", new JutsuData("Water Wall", "NATURE", "WATER", 25, 40, 100, true, 0x96367de0));
-		registerJutsu("water_shark", new JutsuData("Water Shark Bullet", "NATURE", "WATER", 35, 50, 100, false, 0x96367de0));
-		registerJutsu("water_prison", new JutsuData("Water Prison", "NATURE", "WATER", 40, 60, 120, true, 0x96367de0));
+		registerJutsu("water_dragon_bullet", new JutsuData("Water Dragon Bullet", "NATURE", "WATER", 50, 90, 140, false, 0x96367de0));
+		registerJutsu("hiding_in_mist", new JutsuData("Hiding in Mist", "NATURE", "WATER", 25, 40, 100, true, 0x96367de0));
+		registerJutsu("water_prison", new JutsuData("Water Prison", "NATURE", "WATER", 35, 50, 100, false, 0x96367de0));
+		registerJutsu("water_clone", new JutsuData("Water Clone", "NATURE", "WATER", 40, 60, 120, true, 0x96367de0));
+		registerJutsu("severing_wave", new JutsuData("Severing Wave", "NATURE", "WATER", 40, 60, 120, true, 0x96367de0));
 		// Earth Release
 		registerJutsu("earth_wall", new JutsuData("Earth Wall", "NATURE", "EARTH", 30, 50, 100, true, 0x96703f14));
-		registerJutsu("earth_spear", new JutsuData("Earth Spear", "NATURE", "EARTH", 25, 35, 80, true, 0x96703f14));
-		registerJutsu("rock_fist", new JutsuData("Rock Fist", "NATURE", "EARTH", 20, 30, 60, true, 0x96703f14));
-		registerJutsu("earth_dragon", new JutsuData("Earth Dragon Bullet", "NATURE", "EARTH", 45, 70, 120, false, 0x96703f14));
+		registerJutsu("earth_flow_spears", new JutsuData("Earth Spear", "NATURE", "EARTH", 25, 35, 80, true, 0x96703f14));
+		registerJutsu("rock_fists", new JutsuData("Rock Fists", "NATURE", "EARTH", 20, 30, 60, true, 0x96703f14));
+		registerJutsu("earth_dragon_bullet", new JutsuData("Earth Dragon Bullet", "NATURE", "EARTH", 45, 70, 120, false, 0x96703f14));
 		registerJutsu("earth_golem", new JutsuData("Earth Golem", "NATURE", "EARTH", 100, 70, 120, false, 0x96703f14));
 		// Lightning Release
 		registerJutsu("chidori", new JutsuData("Chidori", "NATURE", "LIGHTNING", 50, 80, 140, false, 0x96d2e036));

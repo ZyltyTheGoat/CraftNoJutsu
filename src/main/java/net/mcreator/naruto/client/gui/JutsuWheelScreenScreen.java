@@ -34,7 +34,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.jcraft.jogg.Page;
 
 public class JutsuWheelScreenScreen extends AbstractContainerScreen<JutsuWheelScreenMenu> implements NarutoModScreens.ScreenAccessor {
-	private static final int RADIUS_IN = 60;
+	private static final int RADIUS_IN = 40;
 	private static final int RADIUS_OUT = 160;
 	private static final int BASE_CIRCLE_COLOR = 0x96000000;
 	private static final int HOVER_CIRCLE_COLOR = 0x96FFFFFF;

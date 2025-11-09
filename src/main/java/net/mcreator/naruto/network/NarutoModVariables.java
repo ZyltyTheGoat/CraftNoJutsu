@@ -77,9 +77,9 @@ public class NarutoModVariables {
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
 		public String rank = "";
 		public String unlockedDojutsu = "";
-		public String unlockedJutsu = "fireball,great_fire_annihilation,water_prison,earth_wall,kirin,phoenix_flower,hiding_in_ash,ash_pile_burning,fire_dragon_flame_bullet";
+		public String unlockedJutsu = "";
 		public String unlockedKekkeiGenkai = "";
-		public String unlockedNatures = "FIRE,WATER,AIR,LIGHTNING,EARTH";
+		public String unlockedNatures = "";
 		public double currentChakra = 0;
 		public double maxChakra = 0;
 		public String activeJutsu = "\"\"";

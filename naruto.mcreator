@@ -366,6 +366,577 @@
         ]
       },
       "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "ScrollGreatFireball",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_fireball",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollGreatFireballItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_great_fireball.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollPhoenixFire",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_phoenix_fire",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollPhoenixFireItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_phoenix_fire.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollHidingInAsh",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_ash",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_hiding_in_ash.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollHidingInAshItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollGreatFireAnnihilation",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_fire_annihilation",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollGreatFireAnnihilationItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_great_fire_annihilation.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollFireDragonBullet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_fire_dragon_bullet",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_fire_dragon_bullet.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollFireDragonBulletItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollGreatFireballRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_fireball_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollGreatFireballRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollPhoenixFireRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_phoenix_fire_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollPhoenixFireRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollHidingInAshRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_ash_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollHidingInAshRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollGreatFireAnnihilationRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_fire_annihilation_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollGreatFireAnnihilationRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollFireDragonBulletRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_fire_dragon_bullet_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollFireDragonBulletRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollGreatFlame",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_flame",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollGreatFlameItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_great_flame.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollGreatFlameRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_flame_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollGreatFlameRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Fire"
+    },
+    {
+      "name": "ScrollHidingInMist",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_mist",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_hiding_in_mist.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollHidingInMistItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollHidingInMistRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_mist_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollHidingInMistRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterClone",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_clone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_water_clone.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollWaterCloneItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterCloneRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_clone_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollWaterCloneRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterPrison",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_prison",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollWaterPrisonItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_water_prison.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterPrisonRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_prison_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollWaterPrisonRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterDragonBullet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_dragon_bullet",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_water_dragon_bullet.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollWaterDragonBulletItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterDragonBulletRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_dragon_bullet_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollWaterDragonBulletRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterBulletRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_bullet_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollWaterBulletRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollWaterBullet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_water_bullet",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_water_bullet.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollWaterBulletItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollSeveringWave",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_severing_wave",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollSeveringWaveItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_severing_wave.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "ScrollSeveringWaveRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_severing_wave_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollSeveringWaveRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Water"
+    },
+    {
+      "name": "NarutoModScrolls",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naruto_mod_scrolls",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "ScrollEarthDragonBullet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_dragon_bullet",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollEarthDragonBulletItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_earth_dragon_bullet.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthDragonBulletRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_dragon_bullet_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollEarthDragonBulletRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthWall",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_wall",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_earth_wall.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollEarthWallItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthWallRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_wall_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollEarthWallRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollRockFists",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_rock_fists",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollRockFistsItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_rock_fists.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollRockFistsRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_rock_fists_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollRockFistsRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthFlowSpears",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_flow_spears",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollEarthFlowSpearsItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_earth_flow_spears.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthFlowSpearsRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_flow_spears_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollEarthFlowSpearsRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthGolem",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_golem",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollEarthGolemItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_earth_golem.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollEarthGolemRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_earth_golem_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollEarthGolemRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
     }
   ],
   "variable_elements": [
@@ -385,7 +956,7 @@
       "name": "unlockedJutsu",
       "type": "string",
       "scope": "player_persistent",
-      "value": "fireball,great_fire_annihilation,water_prison,earth_wall,kirin,phoenix_flower,hiding_in_ash,ash_pile_burning,fire_dragon_flame_bullet"
+      "value": ""
     },
     {
       "name": "unlockedKekkeiGenkai",
@@ -397,7 +968,7 @@
       "name": "unlockedNatures",
       "type": "string",
       "scope": "player_persistent",
-      "value": "FIRE,WATER,AIR,LIGHTNING,EARTH"
+      "value": ""
     },
     {
       "name": "currentChakra",
@@ -427,7 +998,42 @@
       "entity.naruto.dummy": "Dummy",
       "gui.naruto.display_chakra.label_empty": "",
       "key.naruto.jutsu_wheel": "Jutsu Wheel",
-      "key.categories.craft_no_jutsu": "Craft no Jutsu"
+      "key.categories.craft_no_jutsu": "Craft no Jutsu",
+      "item.naruto.scroll_great_fireball.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_great_fireball": "Scroll Great Fireball",
+      "item.naruto.scroll_phoenix_fire.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_phoenix_fire": "Scroll Phoenix Flower ",
+      "item.naruto.scroll_hiding_in_ash": "Scroll Hiding in Ash",
+      "item.naruto.scroll_hiding_in_ash.description_0": "A D-Rank Jutsu Scroll",
+      "item.naruto.scroll_great_fire_annihilation": "Scroll Great Fire Annihilation",
+      "item.naruto.scroll_great_fire_annihilation.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_fire_dragon_bullet": "Scroll Fire Dragon Bullet",
+      "item.naruto.scroll_fire_dragon_bullet.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_great_flame": "Scroll Great Flame",
+      "item.naruto.scroll_great_flame.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_hiding_in_mist.description_0": "A D-Rank Jutsu Scroll",
+      "item.naruto.scroll_hiding_in_mist": "Scroll Hiding in Mist",
+      "item.naruto.scroll_water_clone.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_water_clone": "Scroll Water Clone",
+      "item.naruto.scroll_water_prison": "Scroll Water Prison",
+      "item.naruto.scroll_water_prison.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_water_dragon_bullet": "Scroll Water Dragon Bullet",
+      "item.naruto.scroll_water_dragon_bullet.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_water_bullet": "Scroll Water Bullet",
+      "item.naruto.scroll_water_bullet.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_severing_wave.description_0": "A A-Rank Jutsu Scroll",
+      "item.naruto.scroll_severing_wave": "Scroll Severing Wave",
+      "item_group.naruto.naruto_mod_scrolls": "Scrolls",
+      "item.naruto.scroll_earth_dragon_bullet": "Scroll Earth Dragon Bullet",
+      "item.naruto.scroll_earth_dragon_bullet.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_earth_wall": "Scroll Earth Wall",
+      "item.naruto.scroll_earth_wall.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_rock_fists": "Scroll Rock Fists",
+      "item.naruto.scroll_rock_fists.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_earth_flow_spears": "Scroll Earth Flow Spears",
+      "item.naruto.scroll_earth_flow_spears.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_earth_golem.description_0": "A A-Rank Jutsu Scroll",
+      "item.naruto.scroll_earth_golem": "Scroll Earth Golem"
     }
   },
   "metadata": {
@@ -482,6 +1088,28 @@
       {
         "name": "Keybinds",
         "children": []
+      },
+      {
+        "name": "Items",
+        "children": [
+          {
+            "name": "Jutsu Scrolls",
+            "children": [
+              {
+                "name": "Fire",
+                "children": []
+              },
+              {
+                "name": "Water",
+                "children": []
+              },
+              {
+                "name": "Earth",
+                "children": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },
