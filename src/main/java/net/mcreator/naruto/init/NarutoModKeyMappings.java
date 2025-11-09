@@ -15,19 +15,19 @@ import net.neoforged.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
-import net.mcreator.naruto.network.JutsuMenuMessage;
+import net.mcreator.naruto.network.JutsuWheelMessage;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class NarutoModKeyMappings {
-	public static final KeyMapping JUTSU_MENU = new KeyMapping("key.naruto.jutsu_menu", GLFW.GLFW_KEY_M, "key.categories.misc") {
+	public static final KeyMapping JUTSU_WHEEL = new KeyMapping("key.naruto.jutsu_wheel", GLFW.GLFW_KEY_C, "key.categories.craft_no_jutsu") {
 		private boolean isDownOld = false;
 
 		@Override
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				PacketDistributor.sendToServer(new JutsuMenuMessage(0, 0));
-				JutsuMenuMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+				PacketDistributor.sendToServer(new JutsuWheelMessage(0, 0));
+				JutsuWheelMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
 		}
@@ -35,7 +35,7 @@ public class NarutoModKeyMappings {
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
-		event.register(JUTSU_MENU);
+		event.register(JUTSU_WHEEL);
 	}
 
 	@EventBusSubscriber({Dist.CLIENT})
@@ -43,7 +43,7 @@ public class NarutoModKeyMappings {
 		@SubscribeEvent
 		public static void onClientTick(ClientTickEvent.Post event) {
 			if (Minecraft.getInstance().screen == null) {
-				JUTSU_MENU.consumeClick();
+				JUTSU_WHEEL.consumeClick();
 			}
 		}
 	}

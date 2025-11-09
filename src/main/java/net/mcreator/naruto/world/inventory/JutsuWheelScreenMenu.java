@@ -22,11 +22,11 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-public class JutsuMenuGUIMenu extends AbstractContainerMenu implements NarutoModMenus.MenuAccessor {
+public class JutsuWheelScreenMenu extends AbstractContainerMenu implements NarutoModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 7)
+			if (!this.containsKey(key) && this.size() >= 0)
 				return null;
 			return super.put(key, value);
 		}
@@ -42,8 +42,8 @@ public class JutsuMenuGUIMenu extends AbstractContainerMenu implements NarutoMod
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public JutsuMenuGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(NarutoModMenus.JUTSU_MENU_GUI.get(), id);
+	public JutsuWheelScreenMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(NarutoModMenus.JUTSU_WHEEL_SCREEN.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(0);

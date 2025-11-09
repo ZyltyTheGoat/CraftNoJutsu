@@ -16,21 +16,23 @@ package net.mcreator.naruto;
 
 public class JutsuData {
 	private String name;
-	private int cost;
-	private int cooldown;
-	private int chargeTime;
-	private String description;
+	private String type;
 	private String nature;
-	private String rank;
+	private int chakraCost;
+	private int chargeTime;
+	private int cooldown;
+	private boolean isToggle;
+	private int color;
 
-	public JutsuData(String name, int cost, int cooldown, int chargeTime, String description, String nature, String rank) {
+	public JutsuData(String name, String type, String nature, int chakraCost, int chargeTime, int cooldown, boolean isToggle, int color) {
 		this.name = name;
-		this.cost = cost;
-		this.cooldown = cooldown;
-		this.chargeTime = chargeTime;
-		this.description = description;
+		this.type = type;
 		this.nature = nature;
-		this.rank = rank;
+		this.chakraCost = chakraCost;
+		this.chargeTime = chargeTime;
+		this.cooldown = cooldown;
+		this.isToggle = isToggle;
+		this.color = color;
 	}
 
 	// getters
@@ -38,27 +40,31 @@ public class JutsuData {
 		return name;
 	}
 
-	public int getCost() {
-		return cost;
-	}
-
-	public int getCooldown() {
-		return cooldown;
-	}
-
-	public int getChargeTime() {
-		return chargeTime;
-	}
-
-	public String getDescription() {
-		return description;
+	public String getType() {
+		return type;
 	}
 
 	public String getNature() {
 		return nature;
 	}
 
-	public String getRank() {
-		return rank;
+	public int getChakraCost() {
+		return chakraCost;
+	}
+
+	public int getChargeTime() {
+		return chargeTime;
+	}
+
+	public int getCooldown() {
+		return cooldown;
+	}
+
+	public boolean getIsToggle() {
+		return isToggle;
+	}
+
+	public int getColor() {
+		return color;
 	}
 }

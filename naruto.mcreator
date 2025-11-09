@@ -292,26 +292,25 @@
       "path": "~/Jutsu System"
     },
     {
-      "name": "JutsuMenuGUI",
+      "name": "JutsuWheelScreen",
       "type": "gui",
       "compiles": true,
-      "locked_code": false,
-      "registry_name": "jutsu_menu_gui",
+      "locked_code": true,
+      "registry_name": "jutsu_wheel_screen",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/naruto/world/inventory/JutsuMenuGUIMenu.java",
-          "src/main/java/net/mcreator/naruto/client/gui/JutsuMenuGUIScreen.java",
-          "src/main/java/net/mcreator/naruto/network/JutsuMenuGUIButtonMessage.java"
+          "src/main/java/net/mcreator/naruto/client/gui/JutsuWheelScreenScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/JutsuWheelScreenMenu.java"
         ]
       },
       "path": "~/Jutsu System/GUI"
     },
     {
-      "name": "JutsuMenuOnKeyPressed",
+      "name": "JutsuWheelOnKeyPressed",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "jutsu_menu_on_key_pressed",
+      "registry_name": "jutsu_wheel_on_key_pressed",
       "metadata": {
         "dependencies": [
           {
@@ -336,137 +335,37 @@
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/naruto/procedures/JutsuMenuOnKeyPressedProcedure.java"
+          "src/main/java/net/mcreator/naruto/procedures/JutsuWheelOnKeyPressedProcedure.java"
         ]
       },
       "path": "~/Keybinds"
     },
     {
-      "name": "JutsuMenu",
+      "name": "JutsuWheel",
       "type": "keybind",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "jutsu_menu",
+      "registry_name": "jutsu_wheel",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/naruto/network/JutsuMenuMessage.java"
+          "src/main/java/net/mcreator/naruto/network/JutsuWheelMessage.java"
         ]
       },
       "path": "~/Keybinds"
     },
     {
-      "name": "GUIJutsuMenuButtonFireReleaseSelect",
-      "type": "procedure",
+      "name": "NatureReleases",
+      "type": "gui",
       "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_fire_release_select",
+      "locked_code": true,
+      "registry_name": "nature_releases",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
         "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonFireReleaseSelectProcedure.java"
+          "src/main/java/net/mcreator/naruto/client/gui/NatureReleasesScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/NatureReleasesMenu.java"
         ]
       },
-      "path": "~/Jutsu System/GUI/Button Procedures"
-    },
-    {
-      "name": "GUIJutsuMenuButtonWaterReleaseSelect",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_water_release_select",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonWaterReleaseSelectProcedure.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI/Button Procedures"
-    },
-    {
-      "name": "GUIJutsuMenuButtonEarthReleaseSelect",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_earth_release_select",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonEarthReleaseSelectProcedure.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI/Button Procedures"
-    },
-    {
-      "name": "GUIJutsuMenuButtonWindReleaseSelect",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_wind_release_select",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonWindReleaseSelectProcedure.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI/Button Procedures"
-    },
-    {
-      "name": "GUIJutsuMenuButtonLightningReleaseSelect",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_lightning_release_select",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonLightningReleaseSelectProcedure.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI/Button Procedures"
-    },
-    {
-      "name": "GUIJutsuMenuButtonKekkeiGenkaiReleaseSelect",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_jutsu_menu_button_kekkei_genkai_release_select",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/naruto/procedures/GUIJutsuMenuButtonKekkeiGenkaiReleaseSelectProcedure.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI/Button Procedures"
+      "path": "~/Jutsu System/GUI"
     }
   ],
   "variable_elements": [
@@ -474,7 +373,31 @@
       "name": "rank",
       "type": "string",
       "scope": "player_persistent",
-      "value": "\"\""
+      "value": ""
+    },
+    {
+      "name": "unlockedDojutsu",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "unlockedJutsu",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "fireball,great_fire_annihilation,water_prison,earth_wall,kirin,phoenix_flower,hiding_in_ash,ash_pile_burning,fire_dragon_flame_bullet"
+    },
+    {
+      "name": "unlockedKekkeiGenkai",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "unlockedNatures",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "FIRE,WATER,AIR,LIGHTNING,EARTH"
     },
     {
       "name": "currentChakra",
@@ -489,10 +412,10 @@
       "value": "0"
     },
     {
-      "name": "jutsuMenuSelectedRelease",
+      "name": "activeJutsu",
       "type": "string",
-      "scope": "player_lifetime",
-      "value": "fire"
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],
@@ -503,7 +426,8 @@
       "item.naruto.dummy_spawn_egg": "Dummy Spawn Egg",
       "entity.naruto.dummy": "Dummy",
       "gui.naruto.display_chakra.label_empty": "",
-      "key.naruto.jutsu_menu": "Jutsu Menu"
+      "key.naruto.jutsu_wheel": "Jutsu Wheel",
+      "key.categories.craft_no_jutsu": "Craft no Jutsu"
     }
   },
   "metadata": {
@@ -551,12 +475,7 @@
         "children": [
           {
             "name": "GUI",
-            "children": [
-              {
-                "name": "Button Procedures",
-                "children": []
-              }
-            ]
+            "children": []
           }
         ]
       },

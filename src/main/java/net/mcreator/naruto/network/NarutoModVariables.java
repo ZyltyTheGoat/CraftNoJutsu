@@ -61,37 +61,53 @@ public class NarutoModVariables {
 			PlayerVariables original = event.getOriginal().getData(PLAYER_VARIABLES);
 			PlayerVariables clone = new PlayerVariables();
 			clone.rank = original.rank;
+			clone.unlockedDojutsu = original.unlockedDojutsu;
+			clone.unlockedJutsu = original.unlockedJutsu;
+			clone.unlockedKekkeiGenkai = original.unlockedKekkeiGenkai;
+			clone.unlockedNatures = original.unlockedNatures;
 			clone.maxChakra = original.maxChakra;
+			clone.activeJutsu = original.activeJutsu;
 			if (!event.isWasDeath()) {
 				clone.currentChakra = original.currentChakra;
-				clone.jutsuMenuSelectedRelease = original.jutsuMenuSelectedRelease;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
 	}
 
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
-		public String rank = "\"\"";
+		public String rank = "";
+		public String unlockedDojutsu = "";
+		public String unlockedJutsu = "fireball,great_fire_annihilation,water_prison,earth_wall,kirin,phoenix_flower,hiding_in_ash,ash_pile_burning,fire_dragon_flame_bullet";
+		public String unlockedKekkeiGenkai = "";
+		public String unlockedNatures = "FIRE,WATER,AIR,LIGHTNING,EARTH";
 		public double currentChakra = 0;
 		public double maxChakra = 0;
-		public String jutsuMenuSelectedRelease = "fire";
+		public String activeJutsu = "\"\"";
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putString("rank", rank);
+			nbt.putString("unlockedDojutsu", unlockedDojutsu);
+			nbt.putString("unlockedJutsu", unlockedJutsu);
+			nbt.putString("unlockedKekkeiGenkai", unlockedKekkeiGenkai);
+			nbt.putString("unlockedNatures", unlockedNatures);
 			nbt.putDouble("currentChakra", currentChakra);
 			nbt.putDouble("maxChakra", maxChakra);
-			nbt.putString("jutsuMenuSelectedRelease", jutsuMenuSelectedRelease);
+			nbt.putString("activeJutsu", activeJutsu);
 			return nbt;
 		}
 
 		@Override
 		public void deserializeNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 			rank = nbt.getString("rank");
+			unlockedDojutsu = nbt.getString("unlockedDojutsu");
+			unlockedJutsu = nbt.getString("unlockedJutsu");
+			unlockedKekkeiGenkai = nbt.getString("unlockedKekkeiGenkai");
+			unlockedNatures = nbt.getString("unlockedNatures");
 			currentChakra = nbt.getDouble("currentChakra");
 			maxChakra = nbt.getDouble("maxChakra");
-			jutsuMenuSelectedRelease = nbt.getString("jutsuMenuSelectedRelease");
+			activeJutsu = nbt.getString("activeJutsu");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

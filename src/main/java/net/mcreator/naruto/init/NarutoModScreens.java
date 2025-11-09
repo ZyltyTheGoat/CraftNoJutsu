@@ -8,13 +8,15 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
-import net.mcreator.naruto.client.gui.JutsuMenuGUIScreen;
+import net.mcreator.naruto.client.gui.NatureReleasesScreen;
+import net.mcreator.naruto.client.gui.JutsuWheelScreenScreen;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class NarutoModScreens {
 	@SubscribeEvent
 	public static void clientLoad(RegisterMenuScreensEvent event) {
-		event.register(NarutoModMenus.JUTSU_MENU_GUI.get(), JutsuMenuGUIScreen::new);
+		event.register(NarutoModMenus.JUTSU_WHEEL_SCREEN.get(), JutsuWheelScreenScreen::new);
+		event.register(NarutoModMenus.NATURE_RELEASES.get(), NatureReleasesScreen::new);
 	}
 
 	public interface ScreenAccessor {

@@ -14,23 +14,23 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 
-import net.mcreator.naruto.procedures.JutsuMenuOnKeyPressedProcedure;
+import net.mcreator.naruto.procedures.JutsuWheelOnKeyPressedProcedure;
 import net.mcreator.naruto.NarutoMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public record JutsuMenuMessage(int eventType, int pressedms) implements CustomPacketPayload {
-	public static final Type<JutsuMenuMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(NarutoMod.MODID, "key_jutsu_menu"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, JutsuMenuMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, JutsuMenuMessage message) -> {
+public record JutsuWheelMessage(int eventType, int pressedms) implements CustomPacketPayload {
+	public static final Type<JutsuWheelMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(NarutoMod.MODID, "key_jutsu_wheel"));
+	public static final StreamCodec<RegistryFriendlyByteBuf, JutsuWheelMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, JutsuWheelMessage message) -> {
 		buffer.writeInt(message.eventType);
 		buffer.writeInt(message.pressedms);
-	}, (RegistryFriendlyByteBuf buffer) -> new JutsuMenuMessage(buffer.readInt(), buffer.readInt()));
+	}, (RegistryFriendlyByteBuf buffer) -> new JutsuWheelMessage(buffer.readInt(), buffer.readInt()));
 
 	@Override
-	public Type<JutsuMenuMessage> type() {
+	public Type<JutsuWheelMessage> type() {
 		return TYPE;
 	}
 
-	public static void handleData(final JutsuMenuMessage message, final IPayloadContext context) {
+	public static void handleData(final JutsuWheelMessage message, final IPayloadContext context) {
 		if (context.flow() == PacketFlow.SERVERBOUND) {
 			context.enqueueWork(() -> {
 				pressAction(context.player(), message.eventType, message.pressedms);
@@ -51,12 +51,12 @@ public record JutsuMenuMessage(int eventType, int pressedms) implements CustomPa
 			return;
 		if (type == 0) {
 
-			JutsuMenuOnKeyPressedProcedure.execute(world, x, y, z, entity);
+			JutsuWheelOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		NarutoMod.addNetworkMessage(JutsuMenuMessage.TYPE, JutsuMenuMessage.STREAM_CODEC, JutsuMenuMessage::handleData);
+		NarutoMod.addNetworkMessage(JutsuWheelMessage.TYPE, JutsuWheelMessage.STREAM_CODEC, JutsuWheelMessage::handleData);
 	}
 }
