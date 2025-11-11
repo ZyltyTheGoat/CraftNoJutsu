@@ -1353,6 +1353,43 @@
         ]
       },
       "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "DojutsuWheel",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dojutsu_wheel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/gui/DojutsuWheelScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/DojutsuWheelMenu.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "CommandUnlockDojutsu",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_unlock_dojutsu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandUnlockDojutsuProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Unlock Dojutsu"
     }
   ],
   "variable_elements": [
@@ -1504,6 +1541,10 @@
           },
           {
             "name": "Chakra",
+            "children": []
+          },
+          {
+            "name": "Unlock Dojutsu",
             "children": []
           }
         ]

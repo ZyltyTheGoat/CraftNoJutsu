@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
+import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
 import net.mcreator.naruto.network.MenuStateUpdateMessage;
 import net.mcreator.naruto.NarutoMod;
 
@@ -26,6 +27,7 @@ public class NarutoModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, NarutoMod.MODID);
 	public static final DeferredHolder<MenuType<?>, MenuType<JutsuWheelScreenMenu>> JUTSU_WHEEL_SCREEN = REGISTRY.register("jutsu_wheel_screen", () -> IMenuTypeExtension.create(JutsuWheelScreenMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<NatureReleasesMenu>> NATURE_RELEASES = REGISTRY.register("nature_releases", () -> IMenuTypeExtension.create(NatureReleasesMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<DojutsuWheelMenu>> DOJUTSU_WHEEL = REGISTRY.register("dojutsu_wheel", () -> IMenuTypeExtension.create(DojutsuWheelMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

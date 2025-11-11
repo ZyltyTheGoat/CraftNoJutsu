@@ -33,7 +33,9 @@ public class JutsuRegistry {
 		 * isToggle - true if move is a toggle on/off
 		 * color - 0xFFFFFFFF format
 		 */
-		// === NATURE RELEASES ===
+		//
+		// ===== NATURE RELEASES =====
+		//
 		// Fire Release
 		registerJutsu("fireball", new JutsuData("Great Fireball", "NATURE", "FIRE", 30, 60, 100, false, 0x96bc0712));
 		registerJutsu("phoenix_flower", new JutsuData("Phoenix Flower", "NATURE", "FIRE", 25, 40, 80, false, 0x96bc0712));
@@ -68,6 +70,46 @@ public class JutsuRegistry {
 		registerJutsu("rasenshuriken", new JutsuData("Rasenshuriken", "NATURE", "WIND", 80, 120, 200, false, 0x961cb878));
 		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
 		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
+		//
+		// ===== DOJUTSU ======
+		//
+		// == Sharingan ==
+		registerJutsu("sharingan_activate", new JutsuData("Activate", "DOJUTSU", "SHARINGAN", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("genjutsu", new JutsuData("Genjutsu", "DOJUTSU", "SHARINGAN", 20, 30, 60, false, 0x96b30000));
+		// Itachi Sharingan
+		registerJutsu("sharingan_itachi_activate", new JutsuData("Activate", "DOJUTSU", "SHARINGAN_ITACHI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("tsukuyomi", new JutsuData("Tsukuyomi", "DOJUTSU", "SHARINGAN_ITACHI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("amaterasu", new JutsuData("Amaterasu", "DOJUTSU", "SHARINGAN_ITACHI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("susanoo_itachi", new JutsuData("Susanoo", "DOJUTSU", "SHARINGAN_ITACHI", 20, 30, 60, false, 0x96b30000));
+		// Kamui Sharingan
+		registerJutsu("sharingan_kamui_activate", new JutsuData("Activate", "DOJUTSU", "SHARINGAN_KAMUI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("kamui_short", new JutsuData("Kamui - Short Range", "DOJUTSU", "SHARINGAN_KAMUI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("kamui_long", new JutsuData("Kamui - Long Range", "DOJUTSU", "SHARINGAN_KAMUI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("kamui_intagibility", new JutsuData("Intagibility", "DOJUTSU", "SHARINGAN_KAMUI", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("susanoo_kamui", new JutsuData("Susanoo", "DOJUTSU", "SHARINGAN_KAMUI", 20, 30, 60, false, 0x96b30000));
+		// Sasuke Sharingan
+		registerJutsu("sharingan_sasuke_activate", new JutsuData("Activate", "DOJUTSU", "SHARINGAN_SASUKE", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("amaterasu", new JutsuData("Amaterasu", "DOJUTSU", "SHARINGAN_SASUKE", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("kagutsuchi", new JutsuData("Kagutsuchi", "DOJUTSU", "SHARINGAN_SASUKE", 20, 30, 60, false, 0x96b30000));
+		registerJutsu("susanoo_sasuke", new JutsuData("Susanoo", "DOJUTSU", "SHARINGAN_SASUKE", 20, 30, 60, false, 0x96b30000));
+		// == Byakugan ==
+		registerJutsu("byakugan_activate", new JutsuData("Activate", "DOJUTSU", "BYAKUGAN", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("enhanced_vision", new JutsuData("Enhanced Vision", "DOJUTSU", "BYAKUGAN", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("eight_trigrams_vacuum_palm", new JutsuData("8 Trigrams Vacuum Palm", "DOJUTSU", "BYAKUGAN", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("eight_trigrams_sixty_four_lms", new JutsuData("8 Trigrams 64 Palms", "DOJUTSU", "BYAKUGAN", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("eight_trigrams_revolving_heaven", new JutsuData("8 Trigrams Revolving Heaven", "DOJUTSU", "BYAKUGAN", 20, 30, 60, false, 0x96FFFFFF));
+		// == Rinnegan ==
+		registerJutsu("rinnegan_activate", new JutsuData("Activate", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("almighty_push_pull", new JutsuData("Almighty Push/Pull", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("planetary_devestation", new JutsuData("Planetary Devestation", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("asura_attack", new JutsuData("Asura Attack", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("flaming_arrow_warhead", new JutsuData("Flaming Arrow Warhead", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("soul_extraction", new JutsuData("Soul Extraction", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("king_of_hell", new JutsuData("King of Hell", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("summon_multi_headed_dog", new JutsuData("Multi-Headed Dog", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("summon_rhino", new JutsuData("Rhino", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("summon_centipede", new JutsuData("Centipede", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
+		registerJutsu("demonic_statue_of_the_outer_path", new JutsuData("Demonic Statue", "DOJUTSU", "RINNEGAN", 20, 30, 60, false, 0x9690889e));
 	}
 
 	// register a jutsu

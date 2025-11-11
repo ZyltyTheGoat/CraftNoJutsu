@@ -17,7 +17,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
 import net.mcreator.naruto.network.SetActiveJutsuPacket;
 import net.mcreator.naruto.network.NarutoModVariables;
 import net.mcreator.naruto.init.NarutoModScreens;
@@ -29,6 +29,7 @@ import java.util.Set;
 import java.util.Map;
 import java.util.List;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Arrays;
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import com.jcraft.jogg.Page;
 
-public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleasesMenu> implements NarutoModScreens.ScreenAccessor {
+public class DojutsuWheelScreen extends AbstractContainerScreen<DojutsuWheelMenu> implements NarutoModScreens.ScreenAccessor {
 	private static final int RADIUS_IN = 40;
 	private static final int RADIUS_OUT = 160;
 	private static final int RADIUS_COLOR_OUT = 165; // Outer radius for color ring (extends from RADIUS_OUT)
@@ -76,7 +77,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private boolean menuStateUpdateActive = false;
 	private int hovered = -1;
 
-	public NatureReleasesScreen(NatureReleasesMenu container, Inventory inventory, Component text) {
+	public DojutsuWheelScreen(DojutsuWheelMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -92,58 +93,59 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	}
 
 	private void initializePages() {
-		// Get player's unlocked jutsus and natures from NBT data
-		String unlockedJutsuString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).unlockedJutsu;
-		String unlockedNaturesString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).unlockedNatures;
-		// Parse unlocked jutsus into a set for fast lookup
-		Set<String> unlockedJutsus = new HashSet<>();
-		if (!unlockedJutsuString.isEmpty()) {
-			String[] jutsuArray = unlockedJutsuString.split(",");
-			for (String jutsu : jutsuArray) {
-				unlockedJutsus.add(jutsu.trim());
+		// Get player's unlocked dojutsu string
+		String unlockedDojutsuString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).unlockedDojutsu;
+		if (unlockedDojutsuString == null)
+			unlockedDojutsuString = "";
+		// Parse unlocked dojutsu into a set
+		Set<String> unlockedDojutsu = new HashSet<>();
+		if (!unlockedDojutsuString.isEmpty()) {
+			String[] dojutsuArray = unlockedDojutsuString.split(",");
+			for (String dojutsu : dojutsuArray) {
+				unlockedDojutsu.add(dojutsu.trim().toUpperCase());
 			}
 		}
-		// Parse unlocked natures into a set for fast lookup
-		Set<String> unlockedNatures = new HashSet<>();
-		if (!unlockedNaturesString.isEmpty()) {
-			String[] natureArray = unlockedNaturesString.split(",");
-			for (String nature : natureArray) {
-				unlockedNatures.add(nature.trim().toUpperCase());
-			}
-		}
-		// Define the nature types we want pages for
-		String[] natures = {"FIRE", "WATER", "EARTH", "LIGHTNING", "WIND"};
-		String[] natureNames = {"Fire Release", "Water Release", "Earth Release", "Lightning Release", "Wind Release"};
-		for (int i = 0; i < natures.length; i++) {
-			String nature = natures[i];
-			String natureName = natureNames[i];
-			// Only create page if player has unlocked this nature
-			if (!unlockedNatures.contains(nature)) {
-				continue;
-			}
-			// Get all jutsus of this nature that are also type NATURE
-			Map<String, JutsuData> natureJutsus = JutsuRegistry.getJutsusByNature(nature);
+		// Define readable names for each dojutsu
+		Map<String, String> dojutsuDisplayNames = new HashMap<>();
+		dojutsuDisplayNames.put("SHARINGAN", "Sharingan");
+		dojutsuDisplayNames.put("SHARINGAN_ITACHI", "Mangekyō Sharingan - Itachi");
+		dojutsuDisplayNames.put("SHARINGAN_KAMUI", "Mangekyō Sharingan - Kamui");
+		dojutsuDisplayNames.put("SHARINGAN_SASUKE", "Mangekyō Sharingan - Sasuke");
+		dojutsuDisplayNames.put("BYAKUGAN", "Byakugan");
+		dojutsuDisplayNames.put("RINNEGAN", "Rinnegan");
+		// Predefined page order
+		List<String> pageOrder = Arrays.asList("SHARINGAN", "SHARINGAN_ITACHI", "SHARINGAN_KAMUI", "SHARINGAN_SASUKE", "BYAKUGAN", "RINNEGAN");
+		// Create a temporary map of pages
+		Map<String, Page> tempPages = new HashMap<>();
+		for (String dojutsu : unlockedDojutsu) {
+			// Get jutsus belonging to this dojutsu
+			Map<String, JutsuData> dojutsuJutsus = JutsuRegistry.getJutsusByNature(dojutsu);
 			List<String> jutsuIds = new ArrayList<>();
 			List<String> jutsuNames = new ArrayList<>();
-			for (Map.Entry<String, JutsuData> entry : natureJutsus.entrySet()) {
+			for (Map.Entry<String, JutsuData> entry : dojutsuJutsus.entrySet()) {
 				JutsuData jutsu = entry.getValue();
 				String jutsuId = entry.getKey();
-				// Only include jutsus that are:
-				// 1. Type NATURE
-				// 2. Unlocked by the player
-				if (jutsu.getType().equalsIgnoreCase("NATURE") && unlockedJutsus.contains(jutsuId)) {
+				if (jutsu.getType().equalsIgnoreCase("DOJUTSU")) {
 					jutsuIds.add(jutsuId);
 					jutsuNames.add(jutsu.getName());
 				}
 			}
-			// Only add page if there are unlocked jutsus for this nature
+			// Get display name
+			String displayName = dojutsuDisplayNames.getOrDefault(dojutsu, dojutsu.substring(0, 1) + dojutsu.substring(1).toLowerCase());
 			if (!jutsuIds.isEmpty()) {
-				pages.add(new Page(natureName, nature, jutsuIds, jutsuNames));
+				tempPages.put(dojutsu, new Page(displayName, dojutsu, jutsuIds, jutsuNames));
 			}
 		}
-		// Fallback if no pages were created
+		// Clear pages and add them in predefined order
+		pages.clear();
+		for (String dojutsu : pageOrder) {
+			if (tempPages.containsKey(dojutsu)) {
+				pages.add(tempPages.get(dojutsu));
+			}
+		}
+		// Fallback if player has no unlocked dojutsu
 		if (pages.isEmpty()) {
-			pages.add(new Page("No Unlocked Jutsus", "", new ArrayList<>(), Arrays.asList("No jutsus unlocked yet")));
+			pages.add(new Page("No Unlocked Dōjutsu", "", new ArrayList<>(), Arrays.asList("Unlock a Dōjutsu to view abilities")));
 		}
 	}
 
@@ -172,7 +174,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		int centerY = windowHeight / 2;
 		renderRadialWheel(guiGraphics, centerX, centerY);
 		renderColorRing(guiGraphics, centerX, centerY); // Render the new color ring
-		renderNatureIcon(guiGraphics, centerX, centerY); // Render the nature icon in the center
+		renderDojutsuIcon(guiGraphics, centerX, centerY); // Render the nature icon in the center
 		renderJutsuLabels(guiGraphics, centerX, centerY);
 		renderPageIndicator(guiGraphics, windowWidth, windowHeight);
 	}
@@ -205,27 +207,18 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		return "";
 	}
 
-	private void renderNatureIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
-		String nature = getCurrentNature();
-		if (nature.isEmpty())
+	private void renderDojutsuIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
+		String dojutsu = getCurrentNature(); // The "nature" field now stores dojutsu name
+		if (dojutsu.isEmpty())
 			return;
-
-		// Convert nature to lowercase and create the icon resource location
-		// Format: namespace:textures/gui/nature_icons/fire_release_icon.png
-		String iconName = nature.toLowerCase() + "_release_icon";
+		// Format the icon name: "<dojutsu>_icon.png"
+		String iconName = dojutsu.toLowerCase() + "_icon";
 		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
-
-		// Calculate position to center the icon
 		int iconX = centerX - ICON_SIZE / 2;
 		int iconY = centerY - ICON_SIZE / 2;
-
-		// Enable blending for transparency
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-
-		// Render the icon
 		guiGraphics.blit(iconLocation, iconX, iconY, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -432,8 +425,10 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		this.hovered = -1;
 		for (int i = 0; i < jutsuNames.size(); i++) {
 			if (jutsuNames.size() > 1) {
+				// Calculate gap angles for both inner and outer radius
 				float gapAngleIn = GAP_WIDTH_PIXELS / RADIUS_IN;
 				float gapAngleOut = GAP_WIDTH_PIXELS / RADIUS_OUT;
+				// Interpolate gap angle based on mouse distance
 				float gapAngle = gapAngleOut + (gapAngleIn - gapAngleOut) * (float) ((mouseDistance - RADIUS_OUT) / (RADIUS_IN - RADIUS_OUT));
 				float currentStart = getAngleFor(i - 0.5F, jutsuNames.size()) + gapAngle / 2;
 				float currentEnd = getAngleFor(i + 0.5F, jutsuNames.size()) - gapAngle / 2;
