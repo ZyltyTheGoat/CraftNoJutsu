@@ -937,6 +937,422 @@
         ]
       },
       "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ReturnCurrentJutsu",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_current_jutsu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ReturnCurrentJutsuProcedure.java"
+        ]
+      },
+      "path": "~/Chakra System"
+    },
+    {
+      "name": "ScrollGreatBreakthrough",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_breakthrough",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_great_breakthrough.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollGreatBreakthroughItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollGreatBreakthroughRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_great_breakthrough_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollGreatBreakthroughRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollVacuumWave",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_vacuum_wave",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollVacuumWaveItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_vacuum_wave.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollVacuumWaveRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_vacuum_wave_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollVacuumWaveRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollBladeOfWind",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_blade_of_wind",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollBladeOfWindItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_blade_of_wind.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollBladeOfWindRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_blade_of_wind_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollBladeOfWindRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollAirBullets",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_air_bullets",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollAirBulletsItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_air_bullets.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollAirBulletsRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_air_bullets_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollAirBulletsRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollChakraFlow",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_chakra_flow",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_chakra_flow.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollChakraFlowItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollChakraFlowRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_chakra_flow_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollChakraFlowRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollRasenshuriken",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_rasenshuriken",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollRasenshurikenItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_rasenshuriken.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollRasenshurikenRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_rasenshuriken_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollRasenshurikenRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Wind"
+    },
+    {
+      "name": "ScrollBeastTrackingFang",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_beast_tracking_fang",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollBeastTrackingFangItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_beast_tracking_fang.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollBeastTrackingFangRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_beast_tracking_fang_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollBeastTrackingFangRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollFalseDarkness",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_false_darkness",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_false_darkness.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollFalseDarknessItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollFalseDarknessRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_false_darkness_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollFalseDarknessRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollChidori",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_chidori",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_chidori.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollChidoriItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollChidoriRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_chidori_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollChidoriRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollLightningClone",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_lightning_clone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_lightning_clone.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollLightningCloneItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollLightningCloneRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_lightning_clone_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollLightningCloneRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollLightningChakraMode",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_lightning_chakra_mode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollLightningChakraModeItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_lightning_chakra_mode.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollLightningChakraModeRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_lightning_chakra_mode_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollLightningChakraModeRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollKirin",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_kirin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollKirinItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_kirin.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
+    },
+    {
+      "name": "ScrollKirinRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_kirin_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollKirinRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Lightning"
     }
   ],
   "variable_elements": [
@@ -1033,7 +1449,31 @@
       "item.naruto.scroll_earth_flow_spears": "Scroll Earth Flow Spears",
       "item.naruto.scroll_earth_flow_spears.description_0": "A B-Rank Jutsu Scroll",
       "item.naruto.scroll_earth_golem.description_0": "A A-Rank Jutsu Scroll",
-      "item.naruto.scroll_earth_golem": "Scroll Earth Golem"
+      "item.naruto.scroll_earth_golem": "Scroll Earth Golem",
+      "item.naruto.scroll_great_breakthrough": "Scroll Great Breakthrough",
+      "item.naruto.scroll_great_breakthrough.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_vacuum_wave": "Scroll Vacuum Wave",
+      "item.naruto.scroll_vacuum_wave.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_blade_of_wind.description_0": "A A-Rank Jutsu Scroll",
+      "item.naruto.scroll_blade_of_wind": "Scroll Blade of Wind",
+      "item.naruto.scroll_air_bullets": "Scroll Air Bullets",
+      "item.naruto.scroll_air_bullets.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_chakra_flow.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_chakra_flow": "Scroll Chakra Flow",
+      "item.naruto.scroll_rasenshuriken.description_0": "A S-Rank Jutsu Scroll",
+      "item.naruto.scroll_rasenshuriken": "Scroll Rasenshuriken",
+      "item.naruto.scroll_beast_tracking_fang.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_beast_tracking_fang": "Scroll Lightning Beast Tracking Fang",
+      "item.naruto.scroll_false_darkness": "Scroll False Darkness",
+      "item.naruto.scroll_false_darkness.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_chidori": "Scroll Chidori",
+      "item.naruto.scroll_chidori.description_0": "An A-Rank Jutsu Scroll",
+      "item.naruto.scroll_lightning_clone.description_0": "An A-Rank Jutsu Scroll",
+      "item.naruto.scroll_lightning_clone": "Scroll Lightning Clone",
+      "item.naruto.scroll_lightning_chakra_mode.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_lightning_chakra_mode": "Scroll Lightning Chakra Mode",
+      "item.naruto.scroll_kirin.description_0": "A S-Rank Jutsu Scroll",
+      "item.naruto.scroll_kirin": "Scroll Kirin"
     }
   },
   "metadata": {
@@ -1105,6 +1545,14 @@
               },
               {
                 "name": "Earth",
+                "children": []
+              },
+              {
+                "name": "Wind",
+                "children": []
+              },
+              {
+                "name": "Lightning",
                 "children": []
               }
             ]

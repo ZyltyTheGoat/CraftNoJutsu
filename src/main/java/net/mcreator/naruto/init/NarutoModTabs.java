@@ -39,6 +39,18 @@ public class NarutoModTabs {
 				tabData.accept(NarutoModItems.SCROLL_ROCK_FISTS.get());
 				tabData.accept(NarutoModItems.SCROLL_EARTH_FLOW_SPEARS.get());
 				tabData.accept(NarutoModItems.SCROLL_EARTH_GOLEM.get());
+				tabData.accept(NarutoModItems.SCROLL_GREAT_BREAKTHROUGH.get());
+				tabData.accept(NarutoModItems.SCROLL_VACUUM_WAVE.get());
+				tabData.accept(NarutoModItems.SCROLL_BLADE_OF_WIND.get());
+				tabData.accept(NarutoModItems.SCROLL_AIR_BULLETS.get());
+				tabData.accept(NarutoModItems.SCROLL_CHAKRA_FLOW.get());
+				tabData.accept(NarutoModItems.SCROLL_RASENSHURIKEN.get());
+				tabData.accept(NarutoModItems.SCROLL_BEAST_TRACKING_FANG.get());
+				tabData.accept(NarutoModItems.SCROLL_FALSE_DARKNESS.get());
+				tabData.accept(NarutoModItems.SCROLL_CHIDORI.get());
+				tabData.accept(NarutoModItems.SCROLL_LIGHTNING_CLONE.get());
+				tabData.accept(NarutoModItems.SCROLL_LIGHTNING_CHAKRA_MODE.get());
+				tabData.accept(NarutoModItems.SCROLL_KIRIN.get());
 			}).build());
 
 	@SubscribeEvent

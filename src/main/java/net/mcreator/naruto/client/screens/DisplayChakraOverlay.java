@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.naruto.procedures.ReturnCurrentJutsuProcedure;
 import net.mcreator.naruto.procedures.ReturnCurrentChakraProcedure;
 
 @EventBusSubscriber({Dist.CLIENT})
@@ -35,6 +36,9 @@ public class DisplayChakraOverlay {
 			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
 
 					ReturnCurrentChakraProcedure.execute(entity), 51, h - 58, -1, false);
+			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
+
+					ReturnCurrentJutsuProcedure.execute(entity), 51, h - 43, -1, false);
 		}
 	}
 }

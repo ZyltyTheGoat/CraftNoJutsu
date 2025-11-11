@@ -56,17 +56,18 @@ public class JutsuRegistry {
 		registerJutsu("earth_golem", new JutsuData("Earth Golem", "NATURE", "EARTH", 100, 70, 120, false, 0x96703f14));
 		// Lightning Release
 		registerJutsu("chidori", new JutsuData("Chidori", "NATURE", "LIGHTNING", 50, 80, 140, false, 0x96d2e036));
-		registerJutsu("lightning_blade", new JutsuData("Lightning Blade", "NATURE", "LIGHTNING", 60, 100, 160, false, 0x96d2e036));
+		registerJutsu("lightning_clone", new JutsuData("Lightning Clone", "NATURE", "LIGHTNING", 60, 100, 160, false, 0x96d2e036));
 		registerJutsu("false_darkness", new JutsuData("False Darkness", "NATURE", "LIGHTNING", 40, 60, 120, false, 0x96d2e036));
-		registerJutsu("lightning_beast", new JutsuData("Lightning Beast", "NATURE", "LIGHTNING", 35, 50, 100, false, 0x96d2e036));
+		registerJutsu("beast_tracking_fang", new JutsuData("Beast Tracking Fang", "NATURE", "LIGHTNING", 35, 50, 100, false, 0x96d2e036));
 		registerJutsu("lighthing_chakra_mode", new JutsuData("Lightning Chakra Mode", "NATURE", "LIGHTNING", 25, 40, 100, true, 0x96d2e036));
 		registerJutsu("kirin", new JutsuData("Kirin", "NATURE", "LIGHTNING", 200, 40, 100, false, 0x96d2e036));
 		// Wind Release
 		registerJutsu("great_breakthrough", new JutsuData("Great Breakthrough", "NATURE", "WIND", 25, 35, 80, false, 0x96FFFFFF));
-		registerJutsu("wind_blade", new JutsuData("Wind Blade", "NATURE", "WIND", 30, 45, 100, false, 0x96FFFFFF));
-		registerJutsu("vacuum_sphere", new JutsuData("Vacuum Sphere", "NATURE", "WIND", 35, 50, 100, false, 0x96FFFFFF));
+		registerJutsu("air_bullets", new JutsuData("Air Bullets", "NATURE", "WIND", 30, 45, 100, false, 0x96FFFFFF));
+		registerJutsu("vacuum_wave", new JutsuData("Vacuum Wave", "NATURE", "WIND", 35, 50, 100, false, 0x96FFFFFF));
 		registerJutsu("rasenshuriken", new JutsuData("Rasenshuriken", "NATURE", "WIND", 80, 120, 200, false, 0x96FFFFFF));
-		registerJutsu("wind_cutter", new JutsuData("Wind Cutter", "NATURE", "WIND", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 20, 30, 60, false, 0x96FFFFFF));
 	}
 
 	// register a jutsu
