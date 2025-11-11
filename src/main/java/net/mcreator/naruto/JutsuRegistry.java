@@ -35,39 +35,39 @@ public class JutsuRegistry {
 		 */
 		// === NATURE RELEASES ===
 		// Fire Release
-		registerJutsu("fireball", new JutsuData("Great Fireball", "NATURE", "FIRE", 30, 60, 100, false, 0x96e03636));
-		registerJutsu("phoenix_flower", new JutsuData("Phoenix Flower", "NATURE", "FIRE", 25, 40, 80, false, 0x96e03636));
-		registerJutsu("hiding_in_ash", new JutsuData("Hiding in Ash", "NATURE", "FIRE", 25, 0, 100, true, 0x96e03636));
-		registerJutsu("fire_dragon_bullet", new JutsuData("Fire Dragon Bullet", "NATURE", "FIRE", 45, 80, 120, false, 0x96e03636));
-		registerJutsu("great_flame", new JutsuData("Great Flame", "NATURE", "FIRE", 60, 100, 160, false, 0x96e03636));
-		registerJutsu("great_fire_annihilation", new JutsuData("Great Fire Annihilation", "NATURE", "FIRE", 60, 100, 160, false, 0x96e03636));
+		registerJutsu("fireball", new JutsuData("Great Fireball", "NATURE", "FIRE", 30, 60, 100, false, 0x96bc0712));
+		registerJutsu("phoenix_flower", new JutsuData("Phoenix Flower", "NATURE", "FIRE", 25, 40, 80, false, 0x96bc0712));
+		registerJutsu("hiding_in_ash", new JutsuData("Hiding in Ash", "NATURE", "FIRE", 25, 0, 100, true, 0x96bc0712));
+		registerJutsu("fire_dragon_bullet", new JutsuData("Fire Dragon Bullet", "NATURE", "FIRE", 45, 80, 120, false, 0x96bc0712));
+		registerJutsu("great_flame", new JutsuData("Great Flame", "NATURE", "FIRE", 60, 100, 160, false, 0x96bc0712));
+		registerJutsu("great_fire_annihilation", new JutsuData("Great Fire Annihilation", "NATURE", "FIRE", 60, 100, 160, false, 0x96bc0712));
 		// Water Release
-		registerJutsu("water_bullet", new JutsuData("Water Bullet", "NATURE", "WATER", 20, 30, 60, false, 0x96367de0));
-		registerJutsu("water_dragon_bullet", new JutsuData("Water Dragon Bullet", "NATURE", "WATER", 50, 90, 140, false, 0x96367de0));
-		registerJutsu("hiding_in_mist", new JutsuData("Hiding in Mist", "NATURE", "WATER", 25, 40, 100, true, 0x96367de0));
-		registerJutsu("water_prison", new JutsuData("Water Prison", "NATURE", "WATER", 35, 50, 100, false, 0x96367de0));
-		registerJutsu("water_clone", new JutsuData("Water Clone", "NATURE", "WATER", 40, 60, 120, true, 0x96367de0));
-		registerJutsu("severing_wave", new JutsuData("Severing Wave", "NATURE", "WATER", 40, 60, 120, true, 0x96367de0));
+		registerJutsu("water_bullet", new JutsuData("Water Bullet", "NATURE", "WATER", 20, 30, 60, false, 0x960e85fe));
+		registerJutsu("water_dragon_bullet", new JutsuData("Water Dragon Bullet", "NATURE", "WATER", 50, 90, 140, false, 0x960e85fe));
+		registerJutsu("hiding_in_mist", new JutsuData("Hiding in Mist", "NATURE", "WATER", 25, 40, 100, true, 0x960e85fe));
+		registerJutsu("water_prison", new JutsuData("Water Prison", "NATURE", "WATER", 35, 50, 100, false, 0x960e85fe));
+		registerJutsu("water_clone", new JutsuData("Water Clone", "NATURE", "WATER", 40, 60, 120, true, 0x960e85fe));
+		registerJutsu("severing_wave", new JutsuData("Severing Wave", "NATURE", "WATER", 40, 60, 120, true, 0x960e85fe));
 		// Earth Release
-		registerJutsu("earth_wall", new JutsuData("Earth Wall", "NATURE", "EARTH", 30, 50, 100, true, 0x96703f14));
-		registerJutsu("earth_flow_spears", new JutsuData("Earth Spear", "NATURE", "EARTH", 25, 35, 80, true, 0x96703f14));
-		registerJutsu("rock_fists", new JutsuData("Rock Fists", "NATURE", "EARTH", 20, 30, 60, true, 0x96703f14));
-		registerJutsu("earth_dragon_bullet", new JutsuData("Earth Dragon Bullet", "NATURE", "EARTH", 45, 70, 120, false, 0x96703f14));
-		registerJutsu("earth_golem", new JutsuData("Earth Golem", "NATURE", "EARTH", 100, 70, 120, false, 0x96703f14));
+		registerJutsu("earth_wall", new JutsuData("Earth Wall", "NATURE", "EARTH", 30, 50, 100, true, 0x967c5013));
+		registerJutsu("earth_flow_spears", new JutsuData("Earth Spear", "NATURE", "EARTH", 25, 35, 80, true, 0x967c5013));
+		registerJutsu("rock_fists", new JutsuData("Rock Fists", "NATURE", "EARTH", 20, 30, 60, true, 0x967c5013));
+		registerJutsu("earth_dragon_bullet", new JutsuData("Earth Dragon Bullet", "NATURE", "EARTH", 45, 70, 120, false, 0x967c5013));
+		registerJutsu("earth_golem", new JutsuData("Earth Golem", "NATURE", "EARTH", 100, 70, 120, false, 0x967c5013));
 		// Lightning Release
-		registerJutsu("chidori", new JutsuData("Chidori", "NATURE", "LIGHTNING", 50, 80, 140, false, 0x96d2e036));
-		registerJutsu("lightning_clone", new JutsuData("Lightning Clone", "NATURE", "LIGHTNING", 60, 100, 160, false, 0x96d2e036));
-		registerJutsu("false_darkness", new JutsuData("False Darkness", "NATURE", "LIGHTNING", 40, 60, 120, false, 0x96d2e036));
-		registerJutsu("beast_tracking_fang", new JutsuData("Beast Tracking Fang", "NATURE", "LIGHTNING", 35, 50, 100, false, 0x96d2e036));
-		registerJutsu("lighthing_chakra_mode", new JutsuData("Lightning Chakra Mode", "NATURE", "LIGHTNING", 25, 40, 100, true, 0x96d2e036));
-		registerJutsu("kirin", new JutsuData("Kirin", "NATURE", "LIGHTNING", 200, 40, 100, false, 0x96d2e036));
+		registerJutsu("chidori", new JutsuData("Chidori", "NATURE", "LIGHTNING", 50, 80, 140, false, 0x96d3c62b));
+		registerJutsu("lightning_clone", new JutsuData("Lightning Clone", "NATURE", "LIGHTNING", 60, 100, 160, false, 0x96d3c62b));
+		registerJutsu("false_darkness", new JutsuData("False Darkness", "NATURE", "LIGHTNING", 40, 60, 120, false, 0x96d3c62b));
+		registerJutsu("beast_tracking_fang", new JutsuData("Beast Tracking Fang", "NATURE", "LIGHTNING", 35, 50, 100, false, 0x96d3c62b));
+		registerJutsu("lighthing_chakra_mode", new JutsuData("Lightning Chakra Mode", "NATURE", "LIGHTNING", 25, 40, 100, true, 0x96d3c62b));
+		registerJutsu("kirin", new JutsuData("Kirin", "NATURE", "LIGHTNING", 200, 40, 100, false, 0x96d3c62b));
 		// Wind Release
-		registerJutsu("great_breakthrough", new JutsuData("Great Breakthrough", "NATURE", "WIND", 25, 35, 80, false, 0x96FFFFFF));
-		registerJutsu("air_bullets", new JutsuData("Air Bullets", "NATURE", "WIND", 30, 45, 100, false, 0x96FFFFFF));
-		registerJutsu("vacuum_wave", new JutsuData("Vacuum Wave", "NATURE", "WIND", 35, 50, 100, false, 0x96FFFFFF));
-		registerJutsu("rasenshuriken", new JutsuData("Rasenshuriken", "NATURE", "WIND", 80, 120, 200, false, 0x96FFFFFF));
-		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 20, 30, 60, false, 0x96FFFFFF));
-		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 20, 30, 60, false, 0x96FFFFFF));
+		registerJutsu("great_breakthrough", new JutsuData("Great Breakthrough", "NATURE", "WIND", 25, 35, 80, false, 0x961cb878));
+		registerJutsu("air_bullets", new JutsuData("Air Bullets", "NATURE", "WIND", 30, 45, 100, false, 0x961cb878));
+		registerJutsu("vacuum_wave", new JutsuData("Vacuum Wave", "NATURE", "WIND", 35, 50, 100, false, 0x961cb878));
+		registerJutsu("rasenshuriken", new JutsuData("Rasenshuriken", "NATURE", "WIND", 80, 120, 200, false, 0x961cb878));
+		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
+		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
 	}
 
 	// register a jutsu

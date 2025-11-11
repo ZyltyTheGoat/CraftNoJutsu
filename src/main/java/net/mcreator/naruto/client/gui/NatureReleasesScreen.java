@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.util.Mth;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -51,17 +52,20 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private static final int PAGE_DOT_COLOR = 0x80FFFFFF;
 	private static final int PAGE_DOT_ACTIVE_COLOR = 0xFFFFFFFF;
 	private static final float GAP_WIDTH_PIXELS = 12F; // Gap width in pixels (adjust this value to change gap size)
+	private static final int ICON_SIZE = 64; // Size of the nature icon in pixels
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
 
 	private static class Page {
 		final String name;
+		final String nature; // Store the nature type for icon lookup
 		final List<String> jutsuIds;
 		final List<String> jutsuNames;
 
-		Page(String name, List<String> jutsuIds, List<String> jutsuNames) {
+		Page(String name, String nature, List<String> jutsuIds, List<String> jutsuNames) {
 			this.name = name;
+			this.nature = nature;
 			this.jutsuIds = jutsuIds;
 			this.jutsuNames = jutsuNames;
 		}
@@ -134,12 +138,12 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 			}
 			// Only add page if there are unlocked jutsus for this nature
 			if (!jutsuIds.isEmpty()) {
-				pages.add(new Page(natureName, jutsuIds, jutsuNames));
+				pages.add(new Page(natureName, nature, jutsuIds, jutsuNames));
 			}
 		}
 		// Fallback if no pages were created
 		if (pages.isEmpty()) {
-			pages.add(new Page("No Unlocked Jutsus", new ArrayList<>(), Arrays.asList("No jutsus unlocked yet")));
+			pages.add(new Page("No Unlocked Jutsus", "", new ArrayList<>(), Arrays.asList("No jutsus unlocked yet")));
 		}
 	}
 
@@ -168,6 +172,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		int centerY = windowHeight / 2;
 		renderRadialWheel(guiGraphics, centerX, centerY);
 		renderColorRing(guiGraphics, centerX, centerY); // Render the new color ring
+		renderNatureIcon(guiGraphics, centerX, centerY); // Render the nature icon in the center
 		renderJutsuLabels(guiGraphics, centerX, centerY);
 		renderPageIndicator(guiGraphics, windowWidth, windowHeight);
 	}
@@ -191,6 +196,37 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 			return pages.get(currentPage).name;
 		}
 		return "";
+	}
+
+	private String getCurrentNature() {
+		if (currentPage >= 0 && currentPage < pages.size()) {
+			return pages.get(currentPage).nature;
+		}
+		return "";
+	}
+
+	private void renderNatureIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
+		String nature = getCurrentNature();
+		if (nature.isEmpty())
+			return;
+
+		// Convert nature to lowercase and create the icon resource location
+		// Format: namespace:textures/gui/nature_icons/fire_release_icon.png
+		String iconName = nature.toLowerCase() + "_release_icon";
+		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
+
+		// Calculate position to center the icon
+		int iconX = centerX - ICON_SIZE / 2;
+		int iconY = centerY - ICON_SIZE / 2;
+
+		// Enable blending for transparency
+		RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();
+
+		// Render the icon
+		guiGraphics.blit(iconLocation, iconX, iconY, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
+
+		RenderSystem.disableBlend();
 	}
 
 	private void renderRadialWheel(GuiGraphics guiGraphics, int centerX, int centerY) {
