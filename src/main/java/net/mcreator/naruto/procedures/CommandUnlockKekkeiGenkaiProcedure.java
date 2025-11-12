@@ -10,11 +10,11 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-public class CommandUnlockDojutsuProcedure {
+public class CommandUnlockKekkeiGenkaiProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
 		{
 			NarutoModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "name")).getData(NarutoModVariables.PLAYER_VARIABLES);
-			_vars.unlockedDojutsu = (commandParameterEntity(arguments, "name")).getData(NarutoModVariables.PLAYER_VARIABLES).unlockedDojutsu + "" + StringArgumentType.getString(arguments, "dojutsu") + ",";
+			_vars.unlockedKekkeiGenkai = (commandParameterEntity(arguments, "name")).getData(NarutoModVariables.PLAYER_VARIABLES).unlockedKekkeiGenkai + "" + StringArgumentType.getString(arguments, "kekkei_genkai") + ",";
 			_vars.syncPlayerVariables((commandParameterEntity(arguments, "name")));
 		}
 	}

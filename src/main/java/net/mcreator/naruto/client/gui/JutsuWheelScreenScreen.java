@@ -16,6 +16,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.world.inventory.KekkeiGenkaiWheelMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
 import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
 import net.mcreator.naruto.init.NarutoModScreens;
@@ -355,6 +356,22 @@ public class JutsuWheelScreenScreen extends AbstractContainerScreen<JutsuWheelSc
 						buffer.writeBlockPos(new net.minecraft.core.BlockPos(posX, posY, posZ));
 						buffer.resetReaderIndex();
 						mc.setScreen(new DojutsuWheelScreen(new DojutsuWheelMenu(0, player.getInventory(), buffer), player.getInventory(), Component.literal("Dojutsu")));
+					});
+				} else if (selectedJutsu.equals("Kekkei Genkai")) {
+					// Store reference to minecraft
+					Minecraft mc = this.minecraft;
+					Player player = this.minecraft.player;
+					int posX = this.x;
+					int posY = this.y;
+					int posZ = this.z;
+					// Close current GUI first
+					this.onClose();
+					// Schedule opening the new GUI on next tick
+					mc.tell(() -> {
+						FriendlyByteBuf buffer = new FriendlyByteBuf(io.netty.buffer.Unpooled.buffer());
+						buffer.writeBlockPos(new net.minecraft.core.BlockPos(posX, posY, posZ));
+						buffer.resetReaderIndex();
+						mc.setScreen(new KekkeiGenkaiWheelScreen(new KekkeiGenkaiWheelMenu(0, player.getInventory(), buffer), player.getInventory(), Component.literal("Kekkei Genkai")));
 					});
 				} else {
 					// Handle other selections

@@ -1379,10 +1379,6 @@
           {
             "name": "arguments",
             "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
           }
         ],
         "files": [
@@ -1390,6 +1386,39 @@
         ]
       },
       "path": "~/Commands/Unlock Dojutsu"
+    },
+    {
+      "name": "KekkeiGenkaiWheel",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "kekkei_genkai_wheel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/gui/KekkeiGenkaiWheelScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/KekkeiGenkaiWheelMenu.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "CommandUnlockKekkeiGenkai",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_unlock_kekkei_genkai",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/CommandUnlockKekkeiGenkaiProcedure.java"
+        ]
+      },
+      "path": "~/Commands/Unlock Kekkei Genkai"
     }
   ],
   "variable_elements": [
@@ -1545,6 +1574,10 @@
           },
           {
             "name": "Unlock Dojutsu",
+            "children": []
+          },
+          {
+            "name": "Unlock Kekkei Genkai",
             "children": []
           }
         ]

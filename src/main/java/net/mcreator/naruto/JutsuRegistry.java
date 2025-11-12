@@ -71,6 +71,47 @@ public class JutsuRegistry {
 		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
 		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 20, 30, 60, false, 0x961cb878));
 		//
+		// ===== KEKKEI GENKAI =====
+		//
+		// Wood Release
+		registerJutsu("wood_clone", new JutsuData("Wood Clone", "KEKKEI_GENKAI", "WOOD", 30, 60, 100, false, 0x963d811a));
+		registerJutsu("wood_golem", new JutsuData("Wood Golem", "KEKKEI_GENKAI", "WOOD", 30, 60, 100, false, 0x963d811a));
+		registerJutsu("wood_dragon", new JutsuData("Wood Dragon", "KEKKEI_GENKAI", "WOOD", 30, 60, 100, false, 0x963d811a));
+		registerJutsu("deep_forest_emergence", new JutsuData("Deep Forest Emergence", "KEKKEI_GENKAI", "WOOD", 30, 60, 100, false, 0x963d811a));
+		registerJutsu("tree_burial", new JutsuData("Tree Burial", "KEKKEI_GENKAI", "WOOD", 30, 60, 100, false, 0x963d811a));
+		// Lave Release
+		registerJutsu("scorching_rocks", new JutsuData("Scorching Rocks", "KEKKEI_GENKAI", "LAVA", 30, 60, 100, false, 0x96dc0910));
+		registerJutsu("melting_apparition", new JutsuData("Melting Apparition", "KEKKEI_GENKAI", "LAVA", 30, 60, 100, false, 0x96dc0910));
+		registerJutsu("quicklime", new JutsuData("Quicklime", "KEKKEI_GENKAI", "LAVA", 30, 60, 100, false, 0x96dc0910));
+		registerJutsu("lava_chakra_mode", new JutsuData("Lava Chakra Mode", "KEKKEI_GENKAI", "LAVA", 30, 60, 100, false, 0x96dc0910));
+		// Boil Release
+		registerJutsu("solid_fog_jutsu", new JutsuData("Solid Fog Jutsu", "KEKKEI_GENKAI", "BOIL", 30, 60, 100, false, 0x96aa2329));
+		registerJutsu("fog_fist", new JutsuData("Fog Fist", "KEKKEI_GENKAI", "BOIL", 30, 60, 100, false, 0x96aa2329));
+		registerJutsu("solid_fog_spear", new JutsuData("Solid Fog Spear", "KEKKEI_GENKAI", "BOIL", 30, 60, 100, false, 0x96aa2329));
+		// Ice Release
+		registerJutsu("demonic_ice_mirrors", new JutsuData("Demonic Ice Mirrors", "KEKKEI_GENKAI", "ICE", 30, 60, 100, false, 0x96a2dff1));
+		registerJutsu("ice_prison", new JutsuData("Ice Prison", "KEKKEI_GENKAI", "ICE", 30, 60, 100, false, 0x96a2dff1));
+		registerJutsu("white_whale", new JutsuData("White Whale", "KEKKEI_GENKAI", "ICE", 30, 60, 100, false, 0x96a2dff1));
+		registerJutsu("shooting_ice_spears", new JutsuData("Shooting Ice Spears", "KEKKEI_GENKAI", "ICE", 30, 60, 100, false, 0x96a2dff1));
+		// Magnet Release
+		registerJutsu("iron_sand_shower", new JutsuData("Iron Sand Shower", "KEKKEI_GENKAI", "MAGNET", 30, 60, 100, false, 0x96920fff));
+		registerJutsu("iron_sand_gathering_assault", new JutsuData("Iron Sand Gathering Assault", "KEKKEI_GENKAI", "MAGNET", 30, 60, 100, false, 0x96920fff));
+		registerJutsu("needle_sphere", new JutsuData("Needle Sphere", "KEKKEI_GENKAI", "MAGNET", 30, 60, 100, false, 0x96920fff));
+		registerJutsu("sand_burial_prison", new JutsuData("Sand Burial Prison", "KEKKEI_GENKAI", "MAGNET", 30, 60, 100, false, 0x96920fff));
+		registerJutsu("sand_levitation", new JutsuData("Sand Levitation", "KEKKEI_GENKAI", "MAGNET", 30, 60, 100, false, 0x96920fff));
+		// Explosion Release
+		registerJutsu("landmine_fist", new JutsuData("Landmine Fist", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("c0", new JutsuData("C0", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("c1", new JutsuData("C1", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("c2", new JutsuData("C2", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("c3", new JutsuData("C3", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("c4", new JutsuData("C4", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		registerJutsu("suicide_bombing_clone", new JutsuData("Suicide Bombing Clone", "KEKKEI_GENKAI", "EXPLOSION", 30, 60, 100, false, 0x96dc611d));
+		// Storm Release
+		registerJutsu("fang_of_light", new JutsuData("Fang of Light", "KEKKEI_GENKAI", "STORM", 30, 60, 100, false, 0x962b263c));
+		registerJutsu("laser_circus", new JutsuData("Laser Circus", "KEKKEI_GENKAI", "STORM", 30, 60, 100, false, 0x962b263c));
+		registerJutsu("thundering_void_wave", new JutsuData("Thundering Void Wave", "KEKKEI_GENKAI", "STORM", 30, 60, 100, false, 0x962b263c));
+		//
 		// ===== DOJUTSU ======
 		//
 		// == Sharingan ==

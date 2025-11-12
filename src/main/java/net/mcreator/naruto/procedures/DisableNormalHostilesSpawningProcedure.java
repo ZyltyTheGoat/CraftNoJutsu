@@ -6,6 +6,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Ravager;
@@ -36,7 +37,7 @@ public class DisableNormalHostilesSpawningProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Zombie || entity instanceof ZombieHorse || entity instanceof ZombieVillager || entity instanceof Husk || entity instanceof Skeleton || entity instanceof SkeletonHorse || entity instanceof Creeper
-				|| entity instanceof CaveSpider || entity instanceof Spider || entity instanceof EnderMan || entity instanceof Pillager || entity instanceof Ravager || entity instanceof Evoker) {
+				|| entity instanceof CaveSpider || entity instanceof Spider || entity instanceof EnderMan || entity instanceof Pillager || entity instanceof Ravager || entity instanceof Evoker || entity instanceof Witch) {
 			if (event != null) {
 				event.setCanceled(true);
 			}
