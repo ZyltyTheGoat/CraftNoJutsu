@@ -111,10 +111,13 @@ public class DojutsuWheelScreen extends AbstractContainerScreen<DojutsuWheelMenu
 		dojutsuDisplayNames.put("SHARINGAN_ITACHI", "Mangekyō Sharingan - Itachi");
 		dojutsuDisplayNames.put("SHARINGAN_KAMUI", "Mangekyō Sharingan - Kamui");
 		dojutsuDisplayNames.put("SHARINGAN_SASUKE", "Mangekyō Sharingan - Sasuke");
+		dojutsuDisplayNames.put("SHARINGAN_KOTOAMATSUKAMI", "Mangekyō Sharingan - Kotoamatsukami");
+		dojutsuDisplayNames.put("SHARINGAN_OHIRUME", "Mangekyō Sharingan - Ōhirume");
 		dojutsuDisplayNames.put("BYAKUGAN", "Byakugan");
 		dojutsuDisplayNames.put("RINNEGAN", "Rinnegan");
+		dojutsuDisplayNames.put("TENSEIGAN", "Tenseigan");
 		// Predefined page order
-		List<String> pageOrder = Arrays.asList("SHARINGAN", "SHARINGAN_ITACHI", "SHARINGAN_KAMUI", "SHARINGAN_SASUKE", "BYAKUGAN", "RINNEGAN");
+		List<String> pageOrder = Arrays.asList("SHARINGAN", "SHARINGAN_ITACHI", "SHARINGAN_KAMUI", "SHARINGAN_SASUKE", "SHARINGAN_KOTOAMATSUKAMI", "SHARINGAN_OHIRUME", "BYAKUGAN", "RINNEGAN", "TENSEIGAN");
 		// Create a temporary map of pages
 		Map<String, Page> tempPages = new HashMap<>();
 		for (String dojutsu : unlockedDojutsu) {
