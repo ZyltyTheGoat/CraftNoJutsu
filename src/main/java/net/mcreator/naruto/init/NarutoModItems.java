@@ -21,6 +21,7 @@ import net.mcreator.naruto.item.ScrollPhoenixFireItem;
 import net.mcreator.naruto.item.ScrollLightningCloneItem;
 import net.mcreator.naruto.item.ScrollLightningChakraModeItem;
 import net.mcreator.naruto.item.ScrollKirinItem;
+import net.mcreator.naruto.item.ScrollHidingInRockItem;
 import net.mcreator.naruto.item.ScrollHidingInMistItem;
 import net.mcreator.naruto.item.ScrollHidingInAshItem;
 import net.mcreator.naruto.item.ScrollGreatFlameItem;
@@ -72,6 +73,7 @@ public class NarutoModItems {
 	public static final DeferredItem<Item> SCROLL_LIGHTNING_CLONE = REGISTRY.register("scroll_lightning_clone", ScrollLightningCloneItem::new);
 	public static final DeferredItem<Item> SCROLL_LIGHTNING_CHAKRA_MODE = REGISTRY.register("scroll_lightning_chakra_mode", ScrollLightningChakraModeItem::new);
 	public static final DeferredItem<Item> SCROLL_KIRIN = REGISTRY.register("scroll_kirin", ScrollKirinItem::new);
+	public static final DeferredItem<Item> SCROLL_HIDING_IN_ROCK = REGISTRY.register("scroll_hiding_in_rock", ScrollHidingInRockItem::new);
 	// Start of user code block custom items
 	// End of user code block custom items
 }

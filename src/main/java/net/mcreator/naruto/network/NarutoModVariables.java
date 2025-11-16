@@ -67,8 +67,11 @@ public class NarutoModVariables {
 			clone.unlockedNatures = original.unlockedNatures;
 			clone.maxChakra = original.maxChakra;
 			clone.activeJutsu = original.activeJutsu;
+			clone.favouriteJutsu = original.favouriteJutsu;
 			if (!event.isWasDeath()) {
 				clone.currentChakra = original.currentChakra;
+				clone.activeToggleJutsu = original.activeToggleJutsu;
+				clone.chargeTime = original.chargeTime;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -81,8 +84,11 @@ public class NarutoModVariables {
 		public String unlockedKekkeiGenkai = "";
 		public String unlockedNatures = "";
 		public double currentChakra = 0;
-		public double maxChakra = 0;
+		public double maxChakra = 0.0;
 		public String activeJutsu = "\"\"";
+		public String activeToggleJutsu = "";
+		public String favouriteJutsu = "";
+		public double chargeTime = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -95,6 +101,9 @@ public class NarutoModVariables {
 			nbt.putDouble("currentChakra", currentChakra);
 			nbt.putDouble("maxChakra", maxChakra);
 			nbt.putString("activeJutsu", activeJutsu);
+			nbt.putString("activeToggleJutsu", activeToggleJutsu);
+			nbt.putString("favouriteJutsu", favouriteJutsu);
+			nbt.putDouble("chargeTime", chargeTime);
 			return nbt;
 		}
 
@@ -108,6 +117,9 @@ public class NarutoModVariables {
 			currentChakra = nbt.getDouble("currentChakra");
 			maxChakra = nbt.getDouble("maxChakra");
 			activeJutsu = nbt.getString("activeJutsu");
+			activeToggleJutsu = nbt.getString("activeToggleJutsu");
+			favouriteJutsu = nbt.getString("favouriteJutsu");
+			chargeTime = nbt.getDouble("chargeTime");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

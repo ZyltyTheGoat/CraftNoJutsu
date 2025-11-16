@@ -62,5 +62,10 @@
   "item.naruto.scroll_lightning_chakra_mode.description_0": "A B-Rank Jutsu Scroll",
   "item.naruto.scroll_lightning_chakra_mode": "Scroll Lightning Chakra Mode",
   "item.naruto.scroll_kirin.description_0": "A S-Rank Jutsu Scroll",
-  "item.naruto.scroll_kirin": "Scroll Kirin"
+  "item.naruto.scroll_kirin": "Scroll Kirin",
+  "key.naruto.dash_key": "Dash",
+  "item.naruto.scroll_hiding_in_rock.description_0": "A C-Rank Jutsu Scroll",
+  "item.naruto.scroll_hiding_in_rock": "Scroll Hiding in Rock",
+  "key.naruto.favourite_jutsu_wheel_keybind": "Favourite Jutsu Wheel",
+  "key.naruto.use_ability": "Use Ability"
 }

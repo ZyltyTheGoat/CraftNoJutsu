@@ -11,11 +11,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
+import net.mcreator.naruto.world.inventory.FavouriteJutsuWheelMenu;
 
 import io.netty.buffer.Unpooled;
 
-public class JutsuWheelOnKeyPressedProcedure {
+public class FavouriteJutsuWheelOnKeyPressedProcedure {
 	private static long lastCloseTime = 0;
 	private static final long REOPEN_DELAY = 100;
 
@@ -30,7 +30,7 @@ public class JutsuWheelOnKeyPressedProcedure {
 			_ent.openMenu(new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("JutsuWheelScreen");
+					return Component.literal("FavouriteJutsuWheel");
 				}
 
 				@Override
@@ -40,7 +40,7 @@ public class JutsuWheelOnKeyPressedProcedure {
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new JutsuWheelScreenMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+					return new FavouriteJutsuWheelMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 				}
 			}, _bpos);
 		}

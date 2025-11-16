@@ -9,11 +9,11 @@ import net.mcreator.naruto.NarutoMod;
 
 @EventBusSubscriber(modid = NarutoMod.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class NarutoModMessages {
-
 	@SubscribeEvent
 	public static void register(RegisterPayloadHandlersEvent event) {
 		PayloadRegistrar registrar = event.registrar("1");
-
 		registrar.playToServer(SetActiveJutsuPacket.TYPE, SetActiveJutsuPacket.STREAM_CODEC, SetActiveJutsuPacket::handle);
+		registrar.playToServer(SetToggleJutsuPacket.TYPE, SetToggleJutsuPacket.STREAM_CODEC, SetToggleJutsuPacket::handle);
+		registrar.playToServer(SetFavouriteJutsuPacket.TYPE, SetFavouriteJutsuPacket.STREAM_CODEC, SetFavouriteJutsuPacket::handle);
 	}
 }

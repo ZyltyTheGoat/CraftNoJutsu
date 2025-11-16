@@ -18,6 +18,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
 import net.mcreator.naruto.world.inventory.KekkeiGenkaiWheelMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
+import net.mcreator.naruto.world.inventory.FavouriteJutsuWheelMenu;
 import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
 import net.mcreator.naruto.network.MenuStateUpdateMessage;
 import net.mcreator.naruto.NarutoMod;
@@ -30,6 +31,7 @@ public class NarutoModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<NatureReleasesMenu>> NATURE_RELEASES = REGISTRY.register("nature_releases", () -> IMenuTypeExtension.create(NatureReleasesMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<DojutsuWheelMenu>> DOJUTSU_WHEEL = REGISTRY.register("dojutsu_wheel", () -> IMenuTypeExtension.create(DojutsuWheelMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<KekkeiGenkaiWheelMenu>> KEKKEI_GENKAI_WHEEL = REGISTRY.register("kekkei_genkai_wheel", () -> IMenuTypeExtension.create(KekkeiGenkaiWheelMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<FavouriteJutsuWheelMenu>> FAVOURITE_JUTSU_WHEEL = REGISTRY.register("favourite_jutsu_wheel", () -> IMenuTypeExtension.create(FavouriteJutsuWheelMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

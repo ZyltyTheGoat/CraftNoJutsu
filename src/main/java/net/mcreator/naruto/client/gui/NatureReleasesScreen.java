@@ -2,6 +2,7 @@ package net.mcreator.naruto.client.gui;
 
 import org.joml.Matrix4f;
 
+import org.checkerframework.checker.units.qual.s;
 import org.checkerframework.checker.units.qual.g;
 
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -18,6 +19,9 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.procedures.JutsuWheelOnKeyPressedProcedure;
+import net.mcreator.naruto.network.SetToggleJutsuPacket;
+import net.mcreator.naruto.network.SetFavouriteJutsuPacket;
 import net.mcreator.naruto.network.SetActiveJutsuPacket;
 import net.mcreator.naruto.network.NarutoModVariables;
 import net.mcreator.naruto.init.NarutoModScreens;
@@ -25,9 +29,11 @@ import net.mcreator.naruto.init.NarutoModKeyMappings;
 import net.mcreator.naruto.JutsuRegistry;
 import net.mcreator.naruto.JutsuData;
 
+import java.util.stream.Collectors;
 import java.util.Set;
 import java.util.Map;
 import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.HashSet;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -51,7 +57,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private static final int PAGE_INDICATOR_COLOR = 0xFFFFFFFF;
 	private static final int PAGE_DOT_COLOR = 0x80FFFFFF;
 	private static final int PAGE_DOT_ACTIVE_COLOR = 0xFFFFFFFF;
-	private static final float GAP_WIDTH_PIXELS = 12F; // Gap width in pixels (adjust this value to change gap size)
+	private static final float GAP_WIDTH_PIXELS = 4F; // Gap width in pixels (adjust this value to change gap size)
 	private static final int ICON_SIZE = 64; // Size of the nature icon in pixels
 	private final Level world;
 	private final int x, y, z;
@@ -59,7 +65,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 
 	private static class Page {
 		final String name;
-		final String nature; // Store the nature type for icon lookup
+		final String nature;
 		final List<String> jutsuIds;
 		final List<String> jutsuNames;
 
@@ -85,17 +91,13 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		this.entity = container.entity;
 		this.imageWidth = 176;
 		this.imageHeight = 166;
-		// Ensure jutsus are initialized
 		JutsuRegistry.initializeJutsus();
-		// Initialize pages dynamically from player's unlocked jutsus and natures
 		initializePages();
 	}
 
 	private void initializePages() {
-		// Get player's unlocked jutsus and natures from NBT data
 		String unlockedJutsuString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).unlockedJutsu;
 		String unlockedNaturesString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).unlockedNatures;
-		// Parse unlocked jutsus into a set for fast lookup
 		Set<String> unlockedJutsus = new HashSet<>();
 		if (!unlockedJutsuString.isEmpty()) {
 			String[] jutsuArray = unlockedJutsuString.split(",");
@@ -103,7 +105,6 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 				unlockedJutsus.add(jutsu.trim());
 			}
 		}
-		// Parse unlocked natures into a set for fast lookup
 		Set<String> unlockedNatures = new HashSet<>();
 		if (!unlockedNaturesString.isEmpty()) {
 			String[] natureArray = unlockedNaturesString.split(",");
@@ -111,32 +112,25 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 				unlockedNatures.add(nature.trim().toUpperCase());
 			}
 		}
-		// Define the nature types we want pages for
 		String[] natures = {"FIRE", "WATER", "EARTH", "LIGHTNING", "WIND"};
 		String[] natureNames = {"Fire Release", "Water Release", "Earth Release", "Lightning Release", "Wind Release"};
 		for (int i = 0; i < natures.length; i++) {
 			String nature = natures[i];
 			String natureName = natureNames[i];
-			// Only create page if player has unlocked this nature
 			if (!unlockedNatures.contains(nature)) {
 				continue;
 			}
-			// Get all jutsus of this nature that are also type NATURE
 			Map<String, JutsuData> natureJutsus = JutsuRegistry.getJutsusByNature(nature);
 			List<String> jutsuIds = new ArrayList<>();
 			List<String> jutsuNames = new ArrayList<>();
 			for (Map.Entry<String, JutsuData> entry : natureJutsus.entrySet()) {
 				JutsuData jutsu = entry.getValue();
 				String jutsuId = entry.getKey();
-				// Only include jutsus that are:
-				// 1. Type NATURE
-				// 2. Unlocked by the player
 				if (jutsu.getType().equalsIgnoreCase("NATURE") && unlockedJutsus.contains(jutsuId)) {
 					jutsuIds.add(jutsuId);
 					jutsuNames.add(jutsu.getName());
 				}
 			}
-			// Only add page if there are unlocked jutsus for this nature
 			if (!jutsuIds.isEmpty()) {
 				pages.add(new Page(natureName, nature, jutsuIds, jutsuNames));
 			}
@@ -171,8 +165,8 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		int centerX = windowWidth / 2;
 		int centerY = windowHeight / 2;
 		renderRadialWheel(guiGraphics, centerX, centerY);
-		renderColorRing(guiGraphics, centerX, centerY); // Render the new color ring
-		renderNatureIcon(guiGraphics, centerX, centerY); // Render the nature icon in the center
+		renderColorRing(guiGraphics, centerX, centerY);
+		renderNatureIcon(guiGraphics, centerX, centerY);
 		renderJutsuLabels(guiGraphics, centerX, centerY);
 		renderPageIndicator(guiGraphics, windowWidth, windowHeight);
 	}
@@ -205,32 +199,39 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		return "";
 	}
 
+	private Set<String> getActiveToggleJutsus() {
+		Set<String> activeToggles = new HashSet<>();
+		String activeToggleString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).activeToggleJutsu;
+		if (activeToggleString != null && !activeToggleString.isEmpty()) {
+			String[] toggleArray = activeToggleString.split(",");
+			for (String toggle : toggleArray) {
+				activeToggles.add(toggle.trim());
+			}
+		}
+		return activeToggles;
+	}
+
+	private boolean isJutsuToggled(String jutsuId) {
+		return getActiveToggleJutsus().contains(jutsuId);
+	}
+
 	private void renderNatureIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
 		String nature = getCurrentNature();
 		if (nature.isEmpty())
 			return;
-
-		// Convert nature to lowercase and create the icon resource location
-		// Format: namespace:textures/gui/nature_icons/fire_release_icon.png
-		String iconName = nature.toLowerCase() + "_release_icon";
+		String iconName = nature.toLowerCase() + "_icon";
 		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
-
-		// Calculate position to center the icon
 		int iconX = centerX - ICON_SIZE / 2;
 		int iconY = centerY - ICON_SIZE / 2;
-
-		// Enable blending for transparency
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-
-		// Render the icon
 		guiGraphics.blit(iconLocation, iconX, iconY, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
-
 		RenderSystem.disableBlend();
 	}
 
 	private void renderRadialWheel(GuiGraphics guiGraphics, int centerX, int centerY) {
 		List<String> jutsuNames = getCurrentJutsuNames();
+		List<String> jutsuIds = getCurrentJutsuIds();
 		if (jutsuNames.isEmpty())
 			return;
 		RenderSystem.enableBlend();
@@ -241,7 +242,17 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		Tesselator tesselator = Tesselator.getInstance();
 		BufferBuilder buffer = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
 		for (int i = 0; i < jutsuNames.size(); i++) {
-			int color = (this.hovered == i) ? HOVER_CIRCLE_COLOR : BASE_CIRCLE_COLOR;
+			boolean isToggled = false;
+			if (i < jutsuIds.size()) {
+				String jutsuId = jutsuIds.get(i);
+				isToggled = isJutsuToggled(jutsuId);
+			}
+			int color;
+			if (isToggled) {
+				color = (this.hovered == i) ? BASE_CIRCLE_COLOR : HOVER_CIRCLE_COLOR;
+			} else {
+				color = (this.hovered == i) ? HOVER_CIRCLE_COLOR : BASE_CIRCLE_COLOR;
+			}
 			if (jutsuNames.size() > 1) {
 				float gapAngleIn = GAP_WIDTH_PIXELS / RADIUS_IN;
 				float gapAngleOut = GAP_WIDTH_PIXELS / RADIUS_OUT;
@@ -264,7 +275,6 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private void renderColorRing(GuiGraphics guiGraphics, int centerX, int centerY) {
 		List<String> jutsuNames = getCurrentJutsuNames();
 		List<String> jutsuIds = getCurrentJutsuIds();
-		// Add safety check - both lists must have the same size and not be empty
 		if (jutsuNames.isEmpty() || jutsuIds.isEmpty() || jutsuNames.size() != jutsuIds.size()) {
 			return;
 		}
@@ -276,12 +286,10 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		Tesselator tesselator = Tesselator.getInstance();
 		BufferBuilder buffer = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
 		for (int i = 0; i < jutsuNames.size(); i++) {
-			// Get the jutsu color from JutsuData
 			String jutsuId = jutsuIds.get(i);
 			JutsuData jutsuData = JutsuRegistry.getJutsu(jutsuId);
-			int color = jutsuData != null ? jutsuData.getColor() : 0x96FFFFFF; // Default to white if not found
+			int color = jutsuData != null ? jutsuData.getColor() : 0x96FFFFFF;
 			if (jutsuNames.size() > 1) {
-				// Use same gap angles as outer radius to create seamless continuation
 				float gapAngleOut = GAP_WIDTH_PIXELS / RADIUS_OUT;
 				float gapAngleColorOut = GAP_WIDTH_PIXELS / RADIUS_COLOR_OUT;
 				float startAngleOut = getAngleFor(i - 0.5F, jutsuNames.size()) + gapAngleOut / 2;
@@ -304,8 +312,17 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		if (font == null)
 			return;
 		List<String> jutsuNames = getCurrentJutsuNames();
+		List<String> jutsuIds = getCurrentJutsuIds();
 		if (jutsuNames.isEmpty())
 			return;
+		Set<String> favouriteJutsus = new HashSet<>();
+		String favouriteJutsuString = entity.getData(NarutoModVariables.PLAYER_VARIABLES).favouriteJutsu;
+		if (favouriteJutsuString != null && !favouriteJutsuString.isEmpty()) {
+			String[] favouriteArray = favouriteJutsuString.split(",");
+			for (String jutsu : favouriteArray) {
+				favouriteJutsus.add(jutsu.trim());
+			}
+		}
 		float radius = (RADIUS_IN + RADIUS_OUT) / 2.0F;
 		for (int i = 0; i < jutsuNames.size(); i++) {
 			float startAngle = getAngleFor(i - 0.5F, jutsuNames.size());
@@ -313,21 +330,23 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 			float middleAngle = (startAngle + endAngle) / 2.0F;
 			int posX = (int) (centerX + radius * Math.cos(middleAngle));
 			int posY = (int) (centerY + radius * Math.sin(middleAngle));
-			guiGraphics.drawCenteredString(font, jutsuNames.get(i), posX, posY - font.lineHeight / 2, 0xFFFFFFFF);
+			String displayName = jutsuNames.get(i);
+			if (i < jutsuIds.size() && favouriteJutsus.contains(jutsuIds.get(i))) {
+				displayName = "★ " + displayName;
+			}
+			guiGraphics.drawCenteredString(font, displayName, posX, posY - font.lineHeight / 2, 0xFFFFFFFF);
 		}
 	}
 
 	private void renderPageIndicator(GuiGraphics guiGraphics, int windowWidth, int windowHeight) {
 		if (font == null || pages.size() < 1)
 			return;
-		// Render page name at top (larger)
 		String pageName = getCurrentPageName();
 		guiGraphics.pose().pushPose();
 		guiGraphics.pose().scale(1.5F, 1.5F, 1.5F);
 		guiGraphics.drawCenteredString(font, pageName, (int) (windowWidth / 2 / 1.5F), (int) (40 / 1.5F), PAGE_INDICATOR_COLOR);
 		guiGraphics.pose().popPose();
 		if (pages.size() > 1) {
-			// Render page dots
 			int dotY = windowHeight - 40;
 			int dotSpacing = 15;
 			int totalWidth = (pages.size() - 1) * dotSpacing;
@@ -338,7 +357,6 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 				int size = (i == currentPage) ? 4 : 3;
 				guiGraphics.fill(dotX - size / 2, dotY - size / 2, dotX + size / 2, dotY + size / 2, color);
 			}
-			// Render scroll hint
 			guiGraphics.drawCenteredString(font, "Scroll to change pages", windowWidth / 2, windowHeight - 60, 0xFFFFFFFF);
 		}
 	}
@@ -476,24 +494,35 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	public boolean mouseClicked(double mouseX, double mouseY, int button) {
 		List<String> jutsuIds = getCurrentJutsuIds();
 		List<String> jutsuNames = getCurrentJutsuNames();
-		// Add safety checks to prevent IndexOutOfBoundsException
-		if (jutsuIds.isEmpty() || jutsuNames.isEmpty()) {
+		if (jutsuIds.isEmpty() || this.hovered < 0 || this.hovered >= jutsuIds.size() || this.minecraft == null || this.minecraft.player == null) {
 			return super.mouseClicked(mouseX, mouseY, button);
 		}
-		// Ensure hovered index is valid for both lists
-		if (this.hovered >= 0 && this.hovered < jutsuNames.size() && this.hovered < jutsuIds.size()) {
-			if (this.minecraft != null && this.minecraft.player != null) {
-				String selectedJutsuId = jutsuIds.get(this.hovered);
-				String selectedJutsuName = jutsuNames.get(this.hovered);
-				// Send packet to server to set active jutsu (NeoForge way)
-				PacketDistributor.sendToServer(new SetActiveJutsuPacket(selectedJutsuId));
-				// Optional: Show confirmation message
-				this.minecraft.player.displayClientMessage(Component.literal("Selected: " + selectedJutsuName), true);
-				this.minecraft.player.closeContainer();
+		String selectedJutsuId = jutsuIds.get(this.hovered);
+		String selectedJutsuName = jutsuNames.get(this.hovered);
+		JutsuData jutsuData = JutsuRegistry.getJutsu(selectedJutsuId);
+		if (button == 1) {
+			String currentFavorites = entity.getData(NarutoModVariables.PLAYER_VARIABLES).favouriteJutsu;
+			Set<String> favoriteSet = currentFavorites != null && !currentFavorites.isEmpty()
+					? Arrays.stream(currentFavorites.split(",")).map(String::trim).filter(s -> !s.isEmpty()).collect(Collectors.toCollection(LinkedHashSet::new))
+					: new LinkedHashSet<>();
+			if (!favoriteSet.remove(selectedJutsuId)) {
+				favoriteSet.add(selectedJutsuId);
 			}
+			PacketDistributor.sendToServer(new SetFavouriteJutsuPacket(String.join(",", favoriteSet)));
 			return true;
 		}
-		return super.mouseClicked(mouseX, mouseY, button);
+		if (jutsuData != null && jutsuData.getIsToggle()) {
+			String currentToggles = entity.getData(NarutoModVariables.PLAYER_VARIABLES).activeToggleJutsu;
+			Set<String> toggleSet = currentToggles != null && !currentToggles.isEmpty() ? Arrays.stream(currentToggles.split(",")).map(String::trim).filter(s -> !s.isEmpty()).collect(Collectors.toSet()) : new HashSet<>();
+			if (!toggleSet.remove(selectedJutsuId)) {
+				toggleSet.add(selectedJutsuId);
+			}
+			PacketDistributor.sendToServer(new SetToggleJutsuPacket(String.join(",", toggleSet)));
+		} else {
+			PacketDistributor.sendToServer(new SetActiveJutsuPacket(selectedJutsuId));
+			this.minecraft.player.closeContainer();
+		}
+		return true;
 	}
 
 	@Override
@@ -519,6 +548,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	@Override
 	public void removed() {
 		if (this.minecraft != null && this.minecraft.player != null) {
+			JutsuWheelOnKeyPressedProcedure.recordCloseTime();
 			super.removed();
 		}
 	}

@@ -309,7 +309,7 @@
       "name": "JutsuWheelOnKeyPressed",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "jutsu_wheel_on_key_pressed",
       "metadata": {
         "dependencies": [
@@ -1419,6 +1419,225 @@
         ]
       },
       "path": "~/Commands/Unlock Kekkei Genkai"
+    },
+    {
+      "name": "DashKey",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dash_key",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/network/DashKeyMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "Dash",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dash",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/DashProcedure.java"
+        ]
+      },
+      "path": "~/Abilities"
+    },
+    {
+      "name": "WaterWalk",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_walk",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/WaterWalkProcedure.java"
+        ]
+      },
+      "path": "~/Abilities"
+    },
+    {
+      "name": "ScrollHidingInRock",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_rock",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_hiding_in_rock.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollHidingInRockItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "ScrollHidingInRockRighClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_hiding_in_rock_righ_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollHidingInRockRighClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Earth"
+    },
+    {
+      "name": "FavouriteJutsuWheelOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "favourite_jutsu_wheel_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/FavouriteJutsuWheelOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "FavouriteJutsuWheelKeybind",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "favourite_jutsu_wheel_keybind",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/network/FavouriteJutsuWheelKeybindMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "FavouriteJutsuWheel",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "favourite_jutsu_wheel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/world/inventory/FavouriteJutsuWheelMenu.java",
+          "src/main/java/net/mcreator/naruto/client/gui/FavouriteJutsuWheelScreen.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "UseAbility",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "use_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/network/UseAbilityMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "UseAbilityOnKeyReleased",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "use_ability_on_key_released",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/UseAbilityOnKeyReleasedProcedure.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "UseAbilityOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "use_ability_on_key_pressed",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/UseAbilityOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/Keybinds"
     }
   ],
   "variable_elements": [
@@ -1462,13 +1681,31 @@
       "name": "maxChakra",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "activeJutsu",
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "activeToggleJutsu",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": ""
+    },
+    {
+      "name": "favouriteJutsu",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "chargeTime",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1539,7 +1776,12 @@
       "item.naruto.scroll_lightning_chakra_mode.description_0": "A B-Rank Jutsu Scroll",
       "item.naruto.scroll_lightning_chakra_mode": "Scroll Lightning Chakra Mode",
       "item.naruto.scroll_kirin.description_0": "A S-Rank Jutsu Scroll",
-      "item.naruto.scroll_kirin": "Scroll Kirin"
+      "item.naruto.scroll_kirin": "Scroll Kirin",
+      "key.naruto.dash_key": "Dash",
+      "item.naruto.scroll_hiding_in_rock.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_hiding_in_rock": "Scroll Hiding in Rock",
+      "key.naruto.favourite_jutsu_wheel_keybind": "Favourite Jutsu Wheel",
+      "key.naruto.use_ability": "Use Ability"
     }
   },
   "metadata": {
@@ -1632,6 +1874,10 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Abilities",
+        "children": []
       }
     ]
   },

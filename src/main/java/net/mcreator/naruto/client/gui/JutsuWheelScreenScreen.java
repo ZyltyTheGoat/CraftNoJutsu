@@ -19,6 +19,7 @@ import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
 import net.mcreator.naruto.world.inventory.KekkeiGenkaiWheelMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
 import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
+import net.mcreator.naruto.procedures.JutsuWheelOnKeyPressedProcedure;
 import net.mcreator.naruto.init.NarutoModScreens;
 import net.mcreator.naruto.init.NarutoModKeyMappings;
 
@@ -43,7 +44,7 @@ public class JutsuWheelScreenScreen extends AbstractContainerScreen<JutsuWheelSc
 	private static final int PAGE_INDICATOR_COLOR = 0xFFFFFFFF;
 	private static final int PAGE_DOT_COLOR = 0x80FFFFFF;
 	private static final int PAGE_DOT_ACTIVE_COLOR = 0xFFFFFFFF;
-	private static final float GAP_WIDTH_PIXELS = 12f; // Gap width in pixels (adjust this value to change gap size)
+	private static final float GAP_WIDTH_PIXELS = 4F; // Gap width in pixels (adjust this value to change gap size)
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -406,6 +407,7 @@ public class JutsuWheelScreenScreen extends AbstractContainerScreen<JutsuWheelSc
 	@Override
 	public void removed() {
 		if (this.minecraft != null && this.minecraft.player != null) {
+			JutsuWheelOnKeyPressedProcedure.recordCloseTime();
 			super.removed();
 		}
 	}

@@ -10,22 +10,22 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.naruto.NarutoMod;
 
-public record SetActiveJutsuPacket(String jutsuId) implements CustomPacketPayload {
-	public static final Type<SetActiveJutsuPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(NarutoMod.MODID, "set_active_jutsu"));
-	public static final StreamCodec<FriendlyByteBuf, SetActiveJutsuPacket> STREAM_CODEC = StreamCodec.composite(net.minecraft.network.codec.ByteBufCodecs.STRING_UTF8, SetActiveJutsuPacket::jutsuId, SetActiveJutsuPacket::new);
+public record SetToggleJutsuPacket(String jutsuId) implements CustomPacketPayload {
+	public static final Type<SetToggleJutsuPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(NarutoMod.MODID, "set_active_toggle_jutsu"));
+	public static final StreamCodec<FriendlyByteBuf, SetToggleJutsuPacket> STREAM_CODEC = StreamCodec.composite(net.minecraft.network.codec.ByteBufCodecs.STRING_UTF8, SetToggleJutsuPacket::jutsuId, SetToggleJutsuPacket::new);
 
 	@Override
-	public Type<SetActiveJutsuPacket> type() {
+	public Type<SetToggleJutsuPacket> type() {
 		return TYPE;
 	}
 
-	public static void handle(SetActiveJutsuPacket packet, IPayloadContext context) {
+	public static void handle(SetToggleJutsuPacket packet, IPayloadContext context) {
 		context.enqueueWork(() -> {
 			if (context.player() instanceof ServerPlayer serverPlayer) {
 				// Get player variables
 				NarutoModVariables.PlayerVariables playerVars = serverPlayer.getData(NarutoModVariables.PLAYER_VARIABLES);
-				// Set the active jutsu
-				playerVars.activeJutsu = packet.jutsuId;
+				// Set the active toggle jutsu
+				playerVars.activeToggleJutsu = packet.jutsuId;
 				// Sync to client (assumes your PlayerVariables has a sync method)
 				playerVars.syncPlayerVariables(serverPlayer);
 			}

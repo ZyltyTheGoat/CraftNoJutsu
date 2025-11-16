@@ -1,17 +1,3 @@
-/*
- * The code of this mod element is always locked.
- *
- * You can register new events in this class too.
- *
- * If you want to make a plain independent class, create it using
- * Project Browser -> New... and make sure to make the class
- * outside net.mcreator.naruto as this package is managed by MCreator.
- *
- * If you change workspace package, modid or prefix, you will need
- * to manually adapt this file to these changes or remake it.
- *
- * This class will be added in the mod root package.
-*/
 package net.mcreator.naruto;
 
 public class JutsuData {
@@ -29,7 +15,6 @@ public class JutsuData {
 		this.type = type;
 		this.nature = nature;
 		this.chakraCost = chakraCost;
-		this.chargeTime = chargeTime;
 		this.cooldown = cooldown;
 		this.isToggle = isToggle;
 		this.color = color;
@@ -52,12 +37,12 @@ public class JutsuData {
 		return chakraCost;
 	}
 
-	public int getChargeTime() {
-		return chargeTime;
-	}
-
 	public int getCooldown() {
 		return cooldown;
+	}
+
+	public int getChargeTime() {
+		return chargeTime;
 	}
 
 	public boolean getIsToggle() {
@@ -66,5 +51,9 @@ public class JutsuData {
 
 	public int getColor() {
 		return color;
+	}
+
+	public String getIconName() {
+		return this.nature.toLowerCase() + "_icon";
 	}
 }

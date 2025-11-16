@@ -51,6 +51,7 @@ public class NarutoModTabs {
 				tabData.accept(NarutoModItems.SCROLL_LIGHTNING_CLONE.get());
 				tabData.accept(NarutoModItems.SCROLL_LIGHTNING_CHAKRA_MODE.get());
 				tabData.accept(NarutoModItems.SCROLL_KIRIN.get());
+				tabData.accept(NarutoModItems.SCROLL_HIDING_IN_ROCK.get());
 			}).build());
 
 	@SubscribeEvent
