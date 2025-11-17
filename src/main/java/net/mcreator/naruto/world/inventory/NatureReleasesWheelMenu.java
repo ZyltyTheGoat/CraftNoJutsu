@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-public class NatureReleasesMenu extends AbstractContainerMenu implements NarutoModMenus.MenuAccessor {
+public class NatureReleasesWheelMenu extends AbstractContainerMenu implements NarutoModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
@@ -42,8 +42,8 @@ public class NatureReleasesMenu extends AbstractContainerMenu implements NarutoM
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public NatureReleasesMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(NarutoModMenus.NATURE_RELEASES.get(), id);
+	public NatureReleasesWheelMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(NarutoModMenus.NATURE_RELEASES_WHEEL.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(0);

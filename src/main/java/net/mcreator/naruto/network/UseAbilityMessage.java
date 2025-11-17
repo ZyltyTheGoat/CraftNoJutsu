@@ -52,11 +52,11 @@ public record UseAbilityMessage(int eventType, int pressedms) implements CustomP
 			return;
 		if (type == 0) {
 
-			UseAbilityOnKeyPressedProcedure.execute();
+			UseAbilityOnKeyPressedProcedure.execute(entity);
 		}
 		if (type == 1) {
 
-			UseAbilityOnKeyReleasedProcedure.execute();
+			UseAbilityOnKeyReleasedProcedure.execute(entity);
 		}
 	}
 

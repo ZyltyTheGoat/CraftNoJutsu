@@ -15,6 +15,7 @@ public class JutsuData {
 		this.type = type;
 		this.nature = nature;
 		this.chakraCost = chakraCost;
+		this.chargeTime = chargeTime;
 		this.cooldown = cooldown;
 		this.isToggle = isToggle;
 		this.color = color;
@@ -54,6 +55,6 @@ public class JutsuData {
 	}
 
 	public String getIconName() {
-		return this.nature.toLowerCase() + "_icon";
+		return "icon_" + this.getNature().toLowerCase();
 	}
 }

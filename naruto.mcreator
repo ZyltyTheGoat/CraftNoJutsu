@@ -354,20 +354,6 @@
       "path": "~/Keybinds"
     },
     {
-      "name": "NatureReleases",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "nature_releases",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/naruto/client/gui/NatureReleasesScreen.java",
-          "src/main/java/net/mcreator/naruto/world/inventory/NatureReleasesMenu.java"
-        ]
-      },
-      "path": "~/Jutsu System/GUI"
-    },
-    {
       "name": "ScrollGreatFireball",
       "type": "item",
       "compiles": true,
@@ -1618,7 +1604,12 @@
       "locked_code": false,
       "registry_name": "use_ability_on_key_released",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
         "files": [
           "src/main/java/net/mcreator/naruto/procedures/UseAbilityOnKeyReleasedProcedure.java"
         ]
@@ -1632,12 +1623,148 @@
       "locked_code": false,
       "registry_name": "use_ability_on_key_pressed",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
         "files": [
           "src/main/java/net/mcreator/naruto/procedures/UseAbilityOnKeyPressedProcedure.java"
         ]
       },
       "path": "~/Keybinds"
+    },
+    {
+      "name": "UseAbilityWhileKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "use_ability_while_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/UseAbilityWhileKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "NatureReleasesWheel",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "nature_releases_wheel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/gui/NatureReleasesWheelScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/NatureReleasesWheelMenu.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "BigSmoke",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "big_smoke",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/particles/big_smoke.json",
+          "src/main/java/net/mcreator/naruto/client/particle/BigSmokeParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "JutsuHidingInAsh",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_hiding_in_ash",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/JutsuHidingInAshProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release"
+    },
+    {
+      "name": "JutsuHidingInMist",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_hiding_in_mist",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/JutsuHidingInMistProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Water Release"
+    },
+    {
+      "name": "Mist",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mist",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/particles/mist.json",
+          "src/main/java/net/mcreator/naruto/client/particle/MistParticle.java"
+        ]
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [
@@ -1706,6 +1833,12 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "chargingAbility",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -1795,6 +1928,8 @@
       "src/main/java/net/mcreator/naruto/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModMenus.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModKeyMappings.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModParticleTypes.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModParticles.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModItems.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModEntityRenderers.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModEntities.java"
@@ -1877,6 +2012,24 @@
       },
       {
         "name": "Abilities",
+        "children": [
+          {
+            "name": "Nature Releases",
+            "children": [
+              {
+                "name": "Fire Release",
+                "children": []
+              },
+              {
+                "name": "Water Release",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Particles",
         "children": []
       }
     ]

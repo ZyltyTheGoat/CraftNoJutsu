@@ -1,0 +1,21 @@
+/*
+ *    MCreator note: This file will be REGENERATED on each build.
+ */
+package net.mcreator.naruto.init;
+
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
+
+import net.mcreator.naruto.client.particle.MistParticle;
+import net.mcreator.naruto.client.particle.BigSmokeParticle;
+
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class NarutoModParticles {
+	@SubscribeEvent
+	public static void registerParticles(RegisterParticleProvidersEvent event) {
+		event.registerSpriteSet(NarutoModParticleTypes.BIG_SMOKE.get(), BigSmokeParticle::provider);
+		event.registerSpriteSet(NarutoModParticleTypes.MIST.get(), MistParticle::provider);
+	}
+}

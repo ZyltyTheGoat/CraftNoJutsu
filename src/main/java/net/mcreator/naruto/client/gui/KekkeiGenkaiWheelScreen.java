@@ -211,7 +211,7 @@ public class KekkeiGenkaiWheelScreen extends AbstractContainerScreen<KekkeiGenka
 		String nature = getCurrentNature();
 		if (nature.isEmpty())
 			return;
-		String iconName = nature.toLowerCase() + "_icon";
+		String iconName = "icon_" + nature.toLowerCase();
 		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
 		int iconX = centerX - ICON_SIZE / 2;
 		int iconY = centerY - ICON_SIZE / 2;

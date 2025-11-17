@@ -15,7 +15,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.world.inventory.NatureReleasesWheelMenu;
 import net.mcreator.naruto.world.inventory.KekkeiGenkaiWheelMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
 import net.mcreator.naruto.world.inventory.DojutsuWheelMenu;
@@ -340,7 +340,7 @@ public class JutsuWheelScreenScreen extends AbstractContainerScreen<JutsuWheelSc
 						FriendlyByteBuf buffer = new FriendlyByteBuf(io.netty.buffer.Unpooled.buffer());
 						buffer.writeBlockPos(new net.minecraft.core.BlockPos(posX, posY, posZ));
 						buffer.resetReaderIndex();
-						mc.setScreen(new NatureReleasesScreen(new NatureReleasesMenu(0, player.getInventory(), buffer), player.getInventory(), Component.literal("Nature Releases")));
+						mc.setScreen(new NatureReleasesWheelScreen(new NatureReleasesWheelMenu(0, player.getInventory(), buffer), player.getInventory(), Component.literal("Nature Releases")));
 					});
 				} else if (selectedJutsu.equals("Dojutsu")) {
 					// Store reference to minecraft

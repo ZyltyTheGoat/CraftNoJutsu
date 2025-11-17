@@ -18,7 +18,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.world.inventory.NatureReleasesWheelMenu;
 import net.mcreator.naruto.procedures.JutsuWheelOnKeyPressedProcedure;
 import net.mcreator.naruto.network.SetToggleJutsuPacket;
 import net.mcreator.naruto.network.SetFavouriteJutsuPacket;
@@ -48,7 +48,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import com.jcraft.jogg.Page;
 
-public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleasesMenu> implements NarutoModScreens.ScreenAccessor {
+public class NatureReleasesWheelScreen extends AbstractContainerScreen<NatureReleasesWheelMenu> implements NarutoModScreens.ScreenAccessor {
 	private static final int RADIUS_IN = 40;
 	private static final int RADIUS_OUT = 160;
 	private static final int RADIUS_COLOR_OUT = 165; // Outer radius for color ring (extends from RADIUS_OUT)
@@ -82,7 +82,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 	private boolean menuStateUpdateActive = false;
 	private int hovered = -1;
 
-	public NatureReleasesScreen(NatureReleasesMenu container, Inventory inventory, Component text) {
+	public NatureReleasesWheelScreen(NatureReleasesWheelMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -219,7 +219,7 @@ public class NatureReleasesScreen extends AbstractContainerScreen<NatureReleases
 		String nature = getCurrentNature();
 		if (nature.isEmpty())
 			return;
-		String iconName = nature.toLowerCase() + "_icon";
+		String iconName = "icon_" + nature.toLowerCase();
 		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
 		int iconX = centerX - ICON_SIZE / 2;
 		int iconY = centerY - ICON_SIZE / 2;

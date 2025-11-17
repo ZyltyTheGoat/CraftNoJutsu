@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.naruto.network.NarutoModVariables;
 import net.mcreator.naruto.init.NarutoModTabs;
+import net.mcreator.naruto.init.NarutoModParticleTypes;
 import net.mcreator.naruto.init.NarutoModMenus;
 import net.mcreator.naruto.init.NarutoModItems;
 import net.mcreator.naruto.init.NarutoModEntities;
@@ -48,6 +49,7 @@ public class NarutoMod {
 		NarutoModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		NarutoModMenus.REGISTRY.register(modEventBus);
+		NarutoModParticleTypes.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

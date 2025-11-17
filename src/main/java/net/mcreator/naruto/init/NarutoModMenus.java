@@ -15,7 +15,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.naruto.world.inventory.NatureReleasesMenu;
+import net.mcreator.naruto.world.inventory.NatureReleasesWheelMenu;
 import net.mcreator.naruto.world.inventory.KekkeiGenkaiWheelMenu;
 import net.mcreator.naruto.world.inventory.JutsuWheelScreenMenu;
 import net.mcreator.naruto.world.inventory.FavouriteJutsuWheelMenu;
@@ -28,10 +28,10 @@ import java.util.Map;
 public class NarutoModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, NarutoMod.MODID);
 	public static final DeferredHolder<MenuType<?>, MenuType<JutsuWheelScreenMenu>> JUTSU_WHEEL_SCREEN = REGISTRY.register("jutsu_wheel_screen", () -> IMenuTypeExtension.create(JutsuWheelScreenMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<NatureReleasesMenu>> NATURE_RELEASES = REGISTRY.register("nature_releases", () -> IMenuTypeExtension.create(NatureReleasesMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<DojutsuWheelMenu>> DOJUTSU_WHEEL = REGISTRY.register("dojutsu_wheel", () -> IMenuTypeExtension.create(DojutsuWheelMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<KekkeiGenkaiWheelMenu>> KEKKEI_GENKAI_WHEEL = REGISTRY.register("kekkei_genkai_wheel", () -> IMenuTypeExtension.create(KekkeiGenkaiWheelMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<FavouriteJutsuWheelMenu>> FAVOURITE_JUTSU_WHEEL = REGISTRY.register("favourite_jutsu_wheel", () -> IMenuTypeExtension.create(FavouriteJutsuWheelMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<NatureReleasesWheelMenu>> NATURE_RELEASES_WHEEL = REGISTRY.register("nature_releases_wheel", () -> IMenuTypeExtension.create(NatureReleasesWheelMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

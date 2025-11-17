@@ -232,31 +232,12 @@ public class DojutsuWheelScreen extends AbstractContainerScreen<DojutsuWheelMenu
 		return getActiveToggleJutsus().contains(jutsuId);
 	}
 
-	private void renderNatureIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
-		String nature = getCurrentNature();
-		if (nature.isEmpty())
-			return;
-		// Convert nature to lowercase and create the icon resource location
-		// Format: namespace:textures/gui/nature_icons/fire_release_icon.png
-		String iconName = nature.toLowerCase() + "_release_icon";
-		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
-		// Calculate position to center the icon
-		int iconX = centerX - ICON_SIZE / 2;
-		int iconY = centerY - ICON_SIZE / 2;
-		// Enable blending for transparency
-		RenderSystem.enableBlend();
-		RenderSystem.defaultBlendFunc();
-		// Render the icon
-		guiGraphics.blit(iconLocation, iconX, iconY, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
-		RenderSystem.disableBlend();
-	}
-
 	private void renderDojutsuIcon(GuiGraphics guiGraphics, int centerX, int centerY) {
 		String dojutsu = getCurrentNature(); // The "nature" field now stores dojutsu name
 		if (dojutsu.isEmpty())
 			return;
 		// Format the icon name: "<dojutsu>_icon.png"
-		String iconName = dojutsu.toLowerCase() + "_icon";
+		String iconName = "icon_" + dojutsu.toLowerCase();
 		ResourceLocation iconLocation = ResourceLocation.fromNamespaceAndPath("naruto", "textures/screens/" + iconName + ".png");
 		int iconX = centerX - ICON_SIZE / 2;
 		int iconY = centerY - ICON_SIZE / 2;
