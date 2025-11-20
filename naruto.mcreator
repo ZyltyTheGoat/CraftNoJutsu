@@ -1608,6 +1608,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -1715,7 +1731,7 @@
           "src/main/java/net/mcreator/naruto/procedures/JutsuHidingInAshProcedure.java"
         ]
       },
-      "path": "~/Abilities/Nature Releases/Fire Release"
+      "path": "~/Abilities/Nature Releases/Fire Release/Hiding In Ash"
     },
     {
       "name": "JutsuHidingInMist",
@@ -1765,6 +1781,616 @@
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "JutsuGreatFireball",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_great_fireball",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/JutsuGreatFireballProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Great Fireball"
+    },
+    {
+      "name": "GreatFireballOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "great_fireball_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GreatFireballOnEntityTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Great Fireball"
+    },
+    {
+      "name": "PhoenixFlowerParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phoenix_flower_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/particle/PhoenixFlowerParticleParticle.java",
+          "src/main/resources/assets/naruto/particles/phoenix_flower_particle.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "FireballParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fireball_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/particle/FireballParticleParticle.java",
+          "src/main/resources/assets/naruto/particles/fireball_particle.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "JutsuPhoenixFlower",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jutsu_phoenix_flower",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/JutsuPhoenixFlowerProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Phoenix Flower"
+    },
+    {
+      "name": "PhoenixFlowerWhileProjectileFlyingTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phoenix_flower_while_projectile_flying_tick",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/PhoenixFlowerWhileProjectileFlyingTickProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Phoenix Flower"
+    },
+    {
+      "name": "PhoenixFlower",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "phoenix_flower",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/entity/PhoenixFlowerEntity.java",
+          "src/main/java/net/mcreator/naruto/client/renderer/PhoenixFlowerRenderer.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Phoenix Flower"
+    },
+    {
+      "name": "NinjutsuWheel",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ninjutsu_wheel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/gui/NinjutsuWheelScreen.java",
+          "src/main/java/net/mcreator/naruto/world/inventory/NinjutsuWheelMenu.java"
+        ]
+      },
+      "path": "~/Jutsu System/GUI"
+    },
+    {
+      "name": "ScrollShadowClone",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_shadow_clone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollShadowCloneItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_shadow_clone.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollShadowCloneRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_shadow_clone_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollShadowCloneRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollTransformation",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_transformation",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollTransformationItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_transformation.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollTransformationRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_transformation_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollTransformationRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollSubstitution",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_substitution",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollSubstitutionItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_substitution.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollSubstitutionRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_substitution_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollSubstitutionRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollBodyFlicker",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_body_flicker",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollBodyFlickerItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_body_flicker.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollBodyFlickerRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_body_flicker_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollBodyFlickerRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollFlyingRaijin",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_flying_raijin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollFlyingRaijinItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_flying_raijin.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "ScrollFlyingRaijinRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_flying_raijin_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollFlyingRaijinRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Ninjutsu"
+    },
+    {
+      "name": "GreatFireball",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "great_fireball",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/client/renderer/GreatFireballRenderer.java",
+          "src/main/java/net/mcreator/naruto/entity/GreatFireballEntity.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Great Fireball"
+    },
+    {
+      "name": "GreatFireballProjectileHitsBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "great_fireball_projectile_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/GreatFireballProjectileHitsBlockProcedure.java"
+        ]
+      },
+      "path": "~/Abilities/Nature Releases/Fire Release/Great Fireball"
+    },
+    {
+      "name": "ScrollGenjutsu",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_genjutsu",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_genjutsu.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollGenjutsuItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollGenjutsuRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_genjutsu_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollGenjutsuRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollMindBodyTransfer",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_mind_body_transfer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollMindBodyTransferItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_mind_body_transfer.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollMindBodyTransferRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_mind_body_transfer_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollMindBodyTransferRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollShadowImitation",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_shadow_imitation",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_shadow_imitation.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollShadowImitationItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollShadowImitationRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_shadow_imitation_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollShadowImitationRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yin"
+    },
+    {
+      "name": "ScrollMultiSize",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_multi_size",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/naruto/models/item/scroll_multi_size.json",
+          "src/main/java/net/mcreator/naruto/item/ScrollMultiSizeItem.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yang"
+    },
+    {
+      "name": "ScrollMultiSizeRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_multi_size_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollMultiSizeRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yang"
+    },
+    {
+      "name": "ScrollFourSymbolSeal",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_four_symbol_seal",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/naruto/item/ScrollFourSymbolSealItem.java",
+          "src/main/resources/assets/naruto/models/item/scroll_four_symbol_seal.json"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yang"
+    },
+    {
+      "name": "ScrollFourSymbolSealRightClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_four_symbol_seal_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/ScrollFourSymbolSealRightClickedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Jutsu Scrolls/Yang"
+    },
+    {
+      "name": "DamageCalculation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "damage_calculation",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/DamageCalculationProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CraftNoJutsuEnableBlockBreaking",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_no_jutsu_enable_block_breaking",
+      "metadata": {
+        "type": "logic",
+        "files": []
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "BlockDestruction",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_destruction",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "particle",
+            "type": "logic"
+          },
+          {
+            "name": "range",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/naruto/procedures/BlockDestructionProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1839,6 +2465,12 @@
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
+    },
+    {
+      "name": "attackDamage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1914,7 +2546,29 @@
       "item.naruto.scroll_hiding_in_rock.description_0": "A C-Rank Jutsu Scroll",
       "item.naruto.scroll_hiding_in_rock": "Scroll Hiding in Rock",
       "key.naruto.favourite_jutsu_wheel_keybind": "Favourite Jutsu Wheel",
-      "key.naruto.use_ability": "Use Ability"
+      "key.naruto.use_ability": "Use Ability",
+      "item.naruto.scroll_shadow_clone.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_shadow_clone": "Scroll Shadow Clone Jutsu",
+      "item.naruto.scroll_transformation": "Scroll Transformation Jutsu",
+      "item.naruto.scroll_transformation.description_0": "A D-Rank Jutsu Scroll",
+      "item.naruto.scroll_substitution.description_0": "A D-Rank Jutsu Scroll",
+      "item.naruto.scroll_substitution": "Scroll Substitution Jutsu",
+      "item.naruto.scroll_body_flicker": "Scroll Body Flicker",
+      "item.naruto.scroll_body_flicker.description_0": "A D-Rank Jutsu Scroll",
+      "item.naruto.scroll_flying_raijin": "Scroll Flying Raijin",
+      "item.naruto.scroll_flying_raijin.description_0": "A S-Rank Jutsu Scroll",
+      "item.naruto.scroll_genjutsu.description_0": "A B-Rank Jutsu Scroll",
+      "item.naruto.scroll_genjutsu": "Scroll Genjutsu",
+      "item.naruto.scroll_mind_body_transfer.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_mind_body_transfer": "Scroll Mind Body Transfer",
+      "item.naruto.scroll_shadow_imitation.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_shadow_imitation": "Scroll Shadow Imitation Jutsu",
+      "item.naruto.scroll_multi_size.description_0": "A C-Rank Jutsu Scroll",
+      "item.naruto.scroll_multi_size": "Scroll Multi-Size",
+      "item.naruto.scroll_four_symbol_seal": "Scroll Four Symbol Sealing Jutsu",
+      "item.naruto.scroll_four_symbol_seal.description_0": "An A-Rank Jutsu Scroll",
+      "gamerule.craftNoJutsuEnableBlockBreaking.description": "If set to \"false\", this gamerule disables block breaking in the world from attacks.",
+      "gamerule.craftNoJutsuEnableBlockBreaking": "Enable Block Breaking"
     }
   },
   "metadata": {
@@ -1922,11 +2576,13 @@
       "src/main/java/net/mcreator/naruto/network/NarutoModVariables.java",
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/mcreator/naruto/init/NarutoModTabs.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModModels.java",
       "src/main/java/net/mcreator/naruto/NarutoMod.java",
       "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/naruto/init/NarutoModScreens.java",
       "src/main/java/net/mcreator/naruto/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModMenus.java",
+      "src/main/java/net/mcreator/naruto/init/NarutoModGameRules.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModKeyMappings.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModParticleTypes.java",
       "src/main/java/net/mcreator/naruto/init/NarutoModParticles.java",
@@ -2005,6 +2661,18 @@
               {
                 "name": "Lightning",
                 "children": []
+              },
+              {
+                "name": "Ninjutsu",
+                "children": []
+              },
+              {
+                "name": "Yin",
+                "children": []
+              },
+              {
+                "name": "Yang",
+                "children": []
               }
             ]
           }
@@ -2018,11 +2686,33 @@
             "children": [
               {
                 "name": "Fire Release",
-                "children": []
+                "children": [
+                  {
+                    "name": "Great Fireball",
+                    "children": []
+                  },
+                  {
+                    "name": "Hiding In Ash",
+                    "children": []
+                  },
+                  {
+                    "name": "Phoenix Flower",
+                    "children": []
+                  },
+                  {
+                    "name": "Great Flame",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Water Release",
-                "children": []
+                "children": [
+                  {
+                    "name": "Water Clone",
+                    "children": []
+                  }
+                ]
               }
             ]
           }
@@ -2030,6 +2720,10 @@
       },
       {
         "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Gamerules",
         "children": []
       }
     ]

@@ -52,6 +52,16 @@ public class NarutoModTabs {
 				tabData.accept(NarutoModItems.SCROLL_LIGHTNING_CHAKRA_MODE.get());
 				tabData.accept(NarutoModItems.SCROLL_KIRIN.get());
 				tabData.accept(NarutoModItems.SCROLL_HIDING_IN_ROCK.get());
+				tabData.accept(NarutoModItems.SCROLL_SHADOW_CLONE.get());
+				tabData.accept(NarutoModItems.SCROLL_TRANSFORMATION.get());
+				tabData.accept(NarutoModItems.SCROLL_SUBSTITUTION.get());
+				tabData.accept(NarutoModItems.SCROLL_BODY_FLICKER.get());
+				tabData.accept(NarutoModItems.SCROLL_FLYING_RAIJIN.get());
+				tabData.accept(NarutoModItems.SCROLL_GENJUTSU.get());
+				tabData.accept(NarutoModItems.SCROLL_MIND_BODY_TRANSFER.get());
+				tabData.accept(NarutoModItems.SCROLL_SHADOW_IMITATION.get());
+				tabData.accept(NarutoModItems.SCROLL_MULTI_SIZE.get());
+				tabData.accept(NarutoModItems.SCROLL_FOUR_SYMBOL_SEAL.get());
 			}).build());
 
 	@SubscribeEvent

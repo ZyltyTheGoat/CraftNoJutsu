@@ -8,6 +8,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
+import net.mcreator.naruto.client.renderer.PhoenixFlowerRenderer;
+import net.mcreator.naruto.client.renderer.GreatFireballRenderer;
 import net.mcreator.naruto.client.renderer.DummyRenderer;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -15,5 +17,7 @@ public class NarutoModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(NarutoModEntities.DUMMY.get(), DummyRenderer::new);
+		event.registerEntityRenderer(NarutoModEntities.PHOENIX_FLOWER.get(), PhoenixFlowerRenderer::new);
+		event.registerEntityRenderer(NarutoModEntities.GREAT_FIREBALL.get(), GreatFireballRenderer::new);
 	}
 }

@@ -56,7 +56,7 @@ public record UseAbilityMessage(int eventType, int pressedms) implements CustomP
 		}
 		if (type == 1) {
 
-			UseAbilityOnKeyReleasedProcedure.execute(entity);
+			UseAbilityOnKeyReleasedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

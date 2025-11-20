@@ -15,6 +15,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.registries.Registries;
 
+import net.mcreator.naruto.entity.PhoenixFlowerEntity;
+import net.mcreator.naruto.entity.GreatFireballEntity;
 import net.mcreator.naruto.entity.DummyEntity;
 import net.mcreator.naruto.NarutoMod;
 
@@ -25,6 +27,10 @@ public class NarutoModEntities {
 			EntityType.Builder.<DummyEntity>of(DummyEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<PhoenixFlowerEntity>> PHOENIX_FLOWER = register("phoenix_flower",
+			EntityType.Builder.<PhoenixFlowerEntity>of(PhoenixFlowerEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final DeferredHolder<EntityType<?>, EntityType<GreatFireballEntity>> GREAT_FIREBALL = register("great_fireball",
+			EntityType.Builder.<GreatFireballEntity>of(GreatFireballEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(3f, 3f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

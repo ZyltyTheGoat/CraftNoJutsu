@@ -20,6 +20,14 @@ public class JutsuRegistry {
 		 * color - 0xFFFFFFFF format
 		 */
 		//
+		// ===== NINJUTSU =====
+		//
+		registerJutsu("shadow_clone", new JutsuData("Shadow Clone", "NINJUTSU", "NINJUTSU", 30, 0, 0, false, 0x96ffffff));
+		registerJutsu("transformation", new JutsuData("Transformation Jutsu", "NINJUTSU", "NINJUTSU", 30, 0, 0, false, 0x96ffffff));
+		registerJutsu("substitution", new JutsuData("Substitution Jutsu", "NINJUTSU", "NINJUTSU", 30, 0, 0, true, 0x96ffffff));
+		registerJutsu("body_flicker", new JutsuData("Body Flicker", "NINJUTSU", "NINJUTSU", 30, 0, 0, true, 0x96ffffff));
+		registerJutsu("flying_raijin", new JutsuData("Flying Raijin", "NINJUTSU", "NINJUTSU", 30, 0, 0, false, 0x96ffffff));
+		//
 		// ===== NATURE RELEASES =====
 		//
 		// Fire Release
@@ -57,6 +65,13 @@ public class JutsuRegistry {
 		registerJutsu("chakra_flow", new JutsuData("Chakra Flow", "NATURE", "WIND", 3, 0, 0, true, 0x961cb878));
 		registerJutsu("wind_blade", new JutsuData("Blade of Wind", "NATURE", "WIND", 35, 0, 60, false, 0x961cb878));
 		registerJutsu("rasenshuriken", new JutsuData("Rasenshuriken", "NATURE", "WIND", 2000, 200, 200, false, 0x961cb878));
+		// Yin Release
+		registerJutsu("yin_genjutsu", new JutsuData("Genjutsu", "NATURE", "YIN", 2000, 200, 200, false, 0x96222222));
+		registerJutsu("mind_body_transfer", new JutsuData("Mind Body Transfer", "NATURE", "YIN", 2000, 200, 200, false, 0x96222222));
+		registerJutsu("shadow_imitation", new JutsuData("Shadow Imitation", "NATURE", "YIN", 2000, 200, 200, false, 0x96222222));
+		// Yang Release
+		registerJutsu("multi_size", new JutsuData("Multi-Size Jutsu", "NATURE", "YANG", 2000, 200, 200, false, 0x96E8E8E8));
+		registerJutsu("four_symbol_seal", new JutsuData("Four-Symbol Seal", "NATURE", "YANG", 2000, 200, 200, false, 0x96E8E8E8));
 		//
 		// ===== KEKKEI GENKAI =====
 		//

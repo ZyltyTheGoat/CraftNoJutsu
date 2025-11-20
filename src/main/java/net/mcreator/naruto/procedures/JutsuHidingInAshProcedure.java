@@ -13,6 +13,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
@@ -62,6 +64,13 @@ public class JutsuHidingInAshProcedure {
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) && entityiterator instanceof LivingEntity) {
 							entityiterator.igniteForSeconds(5);
+							{
+								NarutoModVariables.PlayerVariables _vars = entity.getData(NarutoModVariables.PLAYER_VARIABLES);
+								_vars.attackDamage = 1;
+								_vars.syncPlayerVariables(entity);
+							}
+							DamageCalculationProcedure.execute(entity);
+							entityiterator.hurt(new DamageSource(world.holderOrThrow(DamageTypes.ON_FIRE), entity), (float) entity.getData(NarutoModVariables.PLAYER_VARIABLES).attackDamage);
 						}
 					}
 				}

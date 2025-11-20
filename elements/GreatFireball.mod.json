@@ -1,0 +1,31 @@
+{
+  "_fv": 79,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Blocks.AIR"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "disableGravity": true,
+    "power": 1.0,
+    "damage": 5.0,
+    "knockback": 5,
+    "entityModel": "ModelProjectile",
+    "customModelTexture": "inv.png",
+    "modelWidth": 3.0,
+    "modelHeight": 3.0,
+    "onHitsBlock": {
+      "name": "GreatFireballProjectileHitsBlock"
+    },
+    "onHitsEntity": {
+      "name": "GreatFireballProjectileHitsBlock"
+    },
+    "onFlyingTick": {
+      "name": "GreatFireballOnEntityTickUpdate"
+    }
+  }
+}

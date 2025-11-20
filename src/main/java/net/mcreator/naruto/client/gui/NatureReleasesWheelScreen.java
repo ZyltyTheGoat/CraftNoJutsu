@@ -112,8 +112,8 @@ public class NatureReleasesWheelScreen extends AbstractContainerScreen<NatureRel
 				unlockedNatures.add(nature.trim().toUpperCase());
 			}
 		}
-		String[] natures = {"FIRE", "WATER", "EARTH", "LIGHTNING", "WIND"};
-		String[] natureNames = {"Fire Release", "Water Release", "Earth Release", "Lightning Release", "Wind Release"};
+		String[] natures = {"FIRE", "WATER", "EARTH", "LIGHTNING", "WIND", "YIN", "YANG"};
+		String[] natureNames = {"Fire Release", "Water Release", "Earth Release", "Lightning Release", "Wind Release", "Yin Release", "Yang Release"};
 		for (int i = 0; i < natures.length; i++) {
 			String nature = natures[i];
 			String natureName = natureNames[i];

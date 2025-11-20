@@ -73,6 +73,7 @@ public class NarutoModVariables {
 				clone.activeToggleJutsu = original.activeToggleJutsu;
 				clone.chargeTime = original.chargeTime;
 				clone.chargingAbility = original.chargingAbility;
+				clone.attackDamage = original.attackDamage;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -91,6 +92,7 @@ public class NarutoModVariables {
 		public String favouriteJutsu = "";
 		public double chargeTime = 0;
 		public boolean chargingAbility = false;
+		public double attackDamage = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -107,6 +109,7 @@ public class NarutoModVariables {
 			nbt.putString("favouriteJutsu", favouriteJutsu);
 			nbt.putDouble("chargeTime", chargeTime);
 			nbt.putBoolean("chargingAbility", chargingAbility);
+			nbt.putDouble("attackDamage", attackDamage);
 			return nbt;
 		}
 
@@ -124,6 +127,7 @@ public class NarutoModVariables {
 			favouriteJutsu = nbt.getString("favouriteJutsu");
 			chargeTime = nbt.getDouble("chargeTime");
 			chargingAbility = nbt.getBoolean("chargingAbility");
+			attackDamage = nbt.getDouble("attackDamage");
 		}
 
 		public void syncPlayerVariables(Entity entity) {
